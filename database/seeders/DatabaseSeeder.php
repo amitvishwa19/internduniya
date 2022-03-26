@@ -21,10 +21,10 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             SettingSeeder::class,
             PostSeeder::class,
-            ClassroomSeeder::class,
-            ChapterSeeder::class,
-            QuizSeeder::class,
-            QuestionSeeder::class,
+            //ClassroomSeeder::class,
+            //ChapterSeeder::class,
+            //QuizSeeder::class,
+            //QuestionSeeder::class,
         ]);
     }
 }
