@@ -244,7 +244,7 @@
 							<div class="col-lg-6">
 								<div class="reviews">
 									<img src="{{$review->feature_image}}" alt="" />
-									<h3>{{$review->title}} </h3>
+									<h3>{{$review->title}} <span>{{$review->description}}</span></h3>
 									<p>{!!substr($review->body, 0, 200)!!}</p>
 								</div><!-- Reviews -->
 							</div>
