@@ -29,14 +29,15 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SandboxController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TeacherController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ErrorLogController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\ClassroomController;
 use App\Http\Controllers\Admin\CorporateController;
-use App\Http\Controllers\Admin\DashboardController;
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IntenshipController;
 use App\Http\Controllers\Admin\AutoDeployController;
 use App\Http\Controllers\Admin\PermissionController;
