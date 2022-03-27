@@ -243,7 +243,7 @@
 							@foreach($reviews as $review)
 							<div class="col-lg-6">
 								<div class="reviews">
-									<img src="images/resource/r1.jpg" alt="" />
+									<img src="{{$review->feature_image}}" alt="" />
 									<h3>{{$review->title}} </h3>
 									<p>{!!$review->body!!}</p>
 								</div><!-- Reviews -->
