@@ -313,7 +313,7 @@
 											</div>
 											<div class="blog-details">
 												<h3><a href="{{route('app.blog.detail',$blog->slug)}}" title="">{{$blog->title}}</a></h3>
-												<p>{!!substr($blog->body, 0, 500)!!}</p>
+												<p>{!!substr($blog->body, 0, 200)!!}</p>
 												<a href="{{route('app.blog.detail',$blog->slug)}}" title="">Read More <i class="la la-long-arrow-right"></i></a>
 											</div>
 										</div>
