@@ -245,7 +245,7 @@
 								<div class="reviews">
 									<img src="{{$review->feature_image}}" alt="" />
 									<h3>{{$review->title}} <span>{{$review->description}}</span></h3>
-									<p>{!!substr($review->body, 0, 200)!!}</p>
+									<p>{!!substr($review->body, 0, 400)!!}</p>
 								</div><!-- Reviews -->
 							</div>
 							@endforeach
