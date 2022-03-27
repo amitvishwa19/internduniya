@@ -245,7 +245,7 @@
 								<div class="reviews">
 									<img src="{{$review->feature_image}}" alt="" />
 									<h3>{{$review->title}} </h3>
-									<p>{!!$review->body!!}</p>
+									<p>{!!substr($review->body, 0, 50)!!}</p>
 								</div><!-- Reviews -->
 							</div>
 							@endforeach
