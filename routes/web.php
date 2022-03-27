@@ -88,6 +88,7 @@ Route::get('/blog/{slug}', [ClientController::class, 'blog_detail'])->name('app.
 Route::get('/terms', [ClientController::class, 'terms'])->name('app.terms');
 Route::get('/privacy', [ClientController::class, 'privacy'])->name('app.privacy');
 
+Route::get('/auth/verify',[RegisterController::class,'verifyUser'])->name('app.auth.verify');
 
 //Student
 //Route::prefix('/student')->middleware(['student','auth'])->group(base_path('routes/student.php'));

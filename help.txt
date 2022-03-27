@@ -1,0 +1,13 @@
+/usr/bin/php /home/u970736216/domains/internduniya.com/public_html/artisan queue:work
+
+/usr/bin/php /home/u970736216/domains/internduniya.com/public_html/artisan schedule:run
+
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.googlemail.com
+MAIL_PORT=465
+MAIL_USERNAME=info@internduniya.com
+MAIL_PASSWORD=Internduniya@1234
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=info@internduniya.com
+MAIL_FROM_NAME="${APP_NAME}"
