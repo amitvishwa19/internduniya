@@ -51,7 +51,12 @@ class CompanyController extends Controller
 
         $profile = Corporate::findOrFail(auth()->user()->corporate->id);
 
-        
+
+        $user = User::findOrFail(auth()->user()->id);
+        $user->firstName = $request->firstName;
+        $user->lastName = $request->lastName;
+        $user->save();
+
         $profile->title = $request->title;
         $profile->description = $request->description;
         $profile->employees = $request->employees;

@@ -24,6 +24,21 @@
                     @endif
 
                     <div class="row">
+
+                        <div class="col-lg-6">
+                            <span class="pf-title">First Name</span>
+                            <div class="pf-field">
+                                <input type="text" name="firstName" value="{{$user->firstName}}">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <span class="pf-title">Last Name</span>
+                            <div class="pf-field">
+                                <input type="text" name="lastName" value="{{$user->lastName}}">
+                            </div>
+                        </div>
+
                         <div class="col-lg-12">
                             <span class="pf-title">Company Name</span>
                             <div class="pf-field">
