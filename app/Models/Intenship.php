@@ -25,4 +25,9 @@ class Intenship extends Model
         return $this->belongsToMany('App\Models\User','applied_internships');
     }
 
+    public function categories()
+    {
+        return $this->belongsToMany('App\Models\Category','intenship_category');
+    }
+
 }

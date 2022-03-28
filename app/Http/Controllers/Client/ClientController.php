@@ -122,6 +122,10 @@ class ClientController extends Controller
         return redirect() ->route('app.home')->withCookie(cookie('subscription','subscription',10));
     }
 
+    public function internships(){
+
+        return view('client.pages.internships');
+    }
 
     public function add_favourite_internship($id){
 

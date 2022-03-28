@@ -99,18 +99,24 @@ class CompanyController extends Controller
 
     public function internship_edit($id){
 
+        $internship_category = Category::where('slug','internship-categories')->first();
+        $categories = Category::where('parent_id', $internship_category->id )->orderby('created_at','desc')->get();
+
+
+        //dd($categories);
         //$internships = Intenship::orderby('created_at','desc')->get();
         $internship = Intenship::findOrFail($id);
         //dd($internship);
 
-        return view('client.pages.company.internship_edit')->with('internship',$internship);
+        return view('client.pages.company.internship_edit')->with('internship',$internship)->with('categories',$categories);
     }
 
     public function internship_new(){
 
+        $internship_category = Category::where('slug','internship-categories')->first();
+        $categories = Category::where('parent_id', $internship_category->id )->orderby('created_at','desc')->get();
 
-
-        return view('client.pages.company.internship_new');
+        return view('client.pages.company.internship_new')->with('categories',$categories);
     }
 
     public function internship_new_add(Request $request){
@@ -165,6 +171,8 @@ class CompanyController extends Controller
         $internship->status = $request->status;
         $internship->save();
 
+        $internship->categories()->sync($request->categories);
+
         return redirect()->route('company.internship')
         ->with([
             'message'    =>'New Internship Added successfully',
@@ -174,7 +182,7 @@ class CompanyController extends Controller
 
     public function internship_update(Request $request,$id){
 
-        //dd($request->all());
+        //dd($request->categories);
         //$internships = Intenship::orderby('created_at','desc')->get();
         $internship = Intenship::findOrFail($id);
         $internship->title = $request->title;
@@ -191,6 +199,8 @@ class CompanyController extends Controller
         $internship->type = $request->type;
         $internship->status = $request->status;
         $internship->save();
+
+        $internship->categories()->sync($request->categories);
 
         return redirect()->route('company.internship')
         ->with([

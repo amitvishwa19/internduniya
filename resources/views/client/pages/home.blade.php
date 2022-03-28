@@ -215,7 +215,7 @@
 					</div>
 					<div class="col-lg-12">
 						<div class="browse-all-cat">
-							<a href="#" title="">Load more listings</a>
+							<a href="{{route('app.internships')}}" title="">Load more listings</a>
 						</div>
 					</div>
 				</div>
@@ -259,6 +259,7 @@
 	</section>
 	<!-- Reviews -->
 
+	<!-- Companies -->
 	<section>
 		<div class="block">
 			<div class="container">
@@ -313,7 +314,7 @@
 											</div>
 											<div class="blog-details">
 												<h3><a href="{{route('app.blog.detail',$blog->slug)}}" title="">{{$blog->title}}</a></h3>
-												<p>{!!substr($blog->body, 0, 150)!!}</p>
+												<p>{!!substr($blog->body, 0, 250)!!}</p>
 												<a href="{{route('app.blog.detail',$blog->slug)}}" title="">Read More <i class="la la-long-arrow-right"></i></a>
 											</div>
 										</div>

@@ -93,6 +93,8 @@
 <script src="{{asset('public/client/js/parallax.js')}}" type="text/javascript"></script>
 <script src="{{asset('public/client/js/select-chosen.js')}}" type="text/javascript"></script>
 
+@yield('javascript')
+
 </body>
 
 

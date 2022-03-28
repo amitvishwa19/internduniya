@@ -50,30 +50,6 @@ use App\Http\Controllers\Client\student\StudentController;
 use App\Http\Controllers\Client\university\UniversityController;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/mail', function(){
-
-    $to = 'amitvishwa19@gmail.com';
-    $subject = 'Test Mail Subject with job mail';
-    $body = 'test body';
-    $data = 'test data';
-    $view = 'mails.subscription';
-
-    return appmail($to,$subject,$body,$data,$view,true);
-
-});
-
-
 
 
 Route::get('/', [ClientController::class, 'home'])->name('app.home');
@@ -81,7 +57,7 @@ Route::get('/news', [ClientController::class, 'blogs'])->name('app.blogs');
 Route::get('/news/{slug}', [ClientController::class, 'blog'])->name('app.blog');
 Route::get('/dashboard', [ClientController::class, 'dashboard'])->name('app.user.dashboard');
 
-
+Route::get('/internships', [ClientController::class, 'internships'])->name('app.internships');
 Route::get('/internship/{id}', [ClientController::class, 'detail_internship'])->name('app.internship.detail');
 Route::get('/blog/{slug}', [ClientController::class, 'blog_detail'])->name('app.blog.detail');
 

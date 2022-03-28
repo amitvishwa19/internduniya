@@ -139,11 +139,10 @@
                 <div class="col-lg-6">
                     <span class="pf-title">Category</span>
                     <div class="pf-field">
-                        <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="category">
-                            <option value="">-Select Category-</option>
-                            <option value="wfh">Education</option>
-                            <option value="regular">Music</option>
-                            <option value="regular">Multimedia</option>
+                        <select class=" chosen" style="display: none;" name="categories[]" multiple="multiple">
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
                         </select>
                     
                     </div>

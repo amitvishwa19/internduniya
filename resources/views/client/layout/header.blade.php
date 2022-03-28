@@ -20,7 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('public/client/css/colors/colors.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('public/client/css/bootstrap.css')}}" />
 	<link rel="stylesheet" href="{{asset('public/client/assets/fontawesome/css/font-awesome.css')}}" />
-	
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
 

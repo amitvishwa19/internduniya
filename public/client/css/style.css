@@ -11882,3 +11882,8 @@ header.style4 .account-btns > li a,
     margin-top: -2px;
     color: red;
 }
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"]{
+    height: 45px !important;
+    border-radius: 20px !important;
+}

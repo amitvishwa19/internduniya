@@ -138,23 +138,30 @@
                     </div>
                 </div>
 
-                <!-- <div class="col-lg-6">
+                <div class="col-lg-6">
                     <span class="pf-title">Category</span>
                     <div class="pf-field">
-                        <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="category">
-                            <option value="">-Select Category-</option>
-                            <option value="wfh">Education</option>
-                            <option value="regular">Music</option>
-                            <option value="regular">Multimedia</option>
+                        <select class=" chosen" style="display: none;" name="categories[]" multiple="multiple">
+                            @foreach($categories as $category)
+                            <option value="{{$category->id}}"
+                                @foreach($internship->categories as $intCat)
+                                @if($intCat->id == $category->id)
+                                    selected
+                                @endif
+                                @endforeach
+                                >{{$category->name}}
+                            </option>
+                            @endforeach
                         </select>
                     
                     </div>
-                </div> -->
+                </div>
+
 
                 <div class="col-lg-6">
                     <span class="pf-title">Status</span>
                     <div class="pf-field">
-                        <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="status">
+                        <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="status" >
                             <option value="">-Select Status-</option>
                             <option value=1 {{$internship->status == true ? "selected" : ""}}>Open</option>
                             <option value=0 {{$internship->status == false ? "selected" : ""}}>Close</option>
@@ -172,5 +179,21 @@
         </div>
 
 </div>
+
+@endsection
+
+@section('javascript')
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  	<script>
+  		$(function(){
+         'use strict'
+
+         $('.select2').select2();
+
+
+
+      });
+  	</script>
 
 @endsection
