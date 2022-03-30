@@ -103,28 +103,38 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">State</span>
+                    <span class="pf-title">Postal Code</span>
                     <div class="pf-field">
-                        <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="state">
-                            <option value="">-Select State-</option>
-                            <option value="gujarat">Gujarat</option>
-                            <option value="punjab">Punjab</option>
-                        </select>
-                    
+                        <input type="number" id="pincode" name="post_code" value="{{old('post_code')}}{{$internship->pincode}}" autocomplete="off" >
+                        <small class="ml-2" id="pinmsg"></small>
                     </div>
                 </div>
+
                 <div class="col-lg-6">
                     <span class="pf-title">City</span>
                     <div class="pf-field">
-                        <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="city">
+                        <!-- <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="city">
                             <option value="">-Select City-</option>
                             <option value="vadodara">Vadodara</option>
                             <option value="ahmedabad">Ahmedabad</option>
-                        </select>
+                        </select> -->
+                        <input type="text" id="city" name="city" value="{{old('city')}}{{$internship->city}}" autocomplete="off" >
                     </div>
                 </div>
 
-
+                <div class="col-lg-6">
+                    <span class="pf-title">State</span>
+                    <div class="pf-field">
+                        <!-- <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="state">
+                            <option value="">-Select State-</option>
+                            <option value="gujarat">Gujarat</option>
+                            <option value="punjab">Punjab</option>
+                        </select> -->
+                        <input type="text" id="state" name="state" value="{{old('state')}}{{$internship->state}}" autocomplete="off" >
+                    
+                    </div>
+                </div>
+                
                 <div class="col-lg-6">
                     <span class="pf-title">Opening Type</span>
                     <div class="pf-field">
@@ -187,9 +197,41 @@
 
   	<script>
   		$(function(){
-         'use strict'
+        'use strict'
 
-         $('.select2').select2();
+        var pincode=0;
+        $('#pincode').on('input',function(e){
+            pincode = jQuery('#pincode').val();
+            if(pincode.length != 6){
+                console.log('No valid pin');
+                $("#pinmsg").text("Invalid Pin Codoe");
+                $('#state').val('');
+                $('#city').val('');
+            }else{
+                $("#pinmsg").text("");
+                if(pincode.length == 6){
+                    $.ajax({
+                        type:'get',
+                        url:"{{ route('generate.location') }}",
+                        data:{pincode:pincode},
+                        success:function(data){
+                            //console.log(data.PostOffice);
+                            var getData = data.PostOffice['0'];
+                            console.log(getData.State)
+                            console.log(getData.Taluk)
+                            $('#state').val(getData.State);
+                            $('#city').val(getData.Taluk);
+                        },
+                        error: function(data){
+                            $("#pinmsg").text("Invalid Pin Codoe");
+                        }
+                    });
+                }
+            }
+        });
+
+        // = jQuery('#pincode').val();
+        
 
 
 

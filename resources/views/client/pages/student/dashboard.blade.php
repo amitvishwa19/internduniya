@@ -14,7 +14,7 @@
 							<a href="{{route('student.internships.applied')}}" title="">
 								<i class="la la-briefcase"></i>
 								<span>Applied Internships</span>
-								<p>14 Applications</p>
+								<p>{{auth()->user()->applied_internships->count()}} Applications</p>
 							</a>
 						</div>
 					</div>

@@ -72,263 +72,49 @@
 			<div class="col-lg-12 column">
 				<div class="modrn-joblist np">
 					<div class="filterbar">
-					
-				
-					<h5>98 Jobs &amp; Vacancies</h5>
+					<h5>{{$internships->count()}} Internship Open to apply</h5>
 					</div>
 				</div>
 			<!-- MOdern Job LIst -->
 				<div class="job-list-modern">
 					<div class="job-listings-sec no-border">
-					<div class="job-listing wtabs">
-						<div class="job-title-sec">
-						<div class="c-logo">
-							<img src="images/resource/l1.png" alt="">
+
+					@foreach($internships as $internship)
+						<div class="job-listing wtabs">
+							<div class="job-title-sec">
+							<div class="c-logo mr-4">
+								<img src="{{$internship->corporate->avatar}}" alt="">
+							</div>
+							<h3 class="ml-5">
+								<a href="{{route('app.internship.detail',$internship->id)}}" title="">{{$internship->title}}</a>
+							</h3>
+							<span>{{$internship->corporate->title}}</span>
+							<div class="job-lctn">
+								@if($internship->city || $internship->state)
+								<i class="la la-map-marker"></i>{{ucFirst($internship->city)}}, {{ucFirst($internship->state)}}
+								@endif
+							</div>
+							</div>
+							<div class="job-style-bx">
+							<span class="job-is ft">{{strtoupper($internship->type)}}</span>
+							<span class="fav-job">
+								<a href="{{route('app.student.favourite.internship',$internship->id)}}"><i class="la la-heart-o"></i></a>
+							</span>
+							<i>{{$internship->created_at->diffForHumans()}}</i>
+							</div>
 						</div>
-						<h3 class="ml-5">
-							<a href="#" title="">Web Designer / Developer</a>
-						</h3>
-						<span>Massimo Artemisis</span>
-						<div class="job-lctn">
-							<i class="la la-map-marker"></i>Sacramento, California
-						</div>
-						</div>
-						<div class="job-style-bx">
-						<span class="job-is ft">Full time</span>
-						<span class="fav-job">
-							<i class="la la-heart-o"></i>
-						</span>
-						<i>5 months ago</i>
-						</div>
+					@endforeach
 					</div>
-					<div class="job-listing wtabs">
-						<div class="job-title-sec">
-						<div class="c-logo">
-							<img src="images/resource/l2.png" alt="">
-						</div>
-						<h3>
-							<a href="#" title="">C Developer (Senior) C .Net</a>
-						</h3>
-						<span>Massimo Artemisis</span>
-						<div class="job-lctn">
-							<i class="la la-map-marker"></i>Sacramento, California
-						</div>
-						</div>
-						<div class="job-style-bx">
-						<span class="job-is pt ">Part time</span>
-						<span class="fav-job">
-							<i class="la la-heart-o"></i>
-						</span>
-						<i>5 months ago</i>
-						</div>
-					</div>
-					<!-- Job -->
-					<div class="job-listing wtabs">
-						<div class="job-title-sec">
-						<div class="c-logo">
-							<img src="images/resource/l3.png" alt="">
-						</div>
-						<h3>
-							<a href="#" title="">Regional Sales Manager South</a>
-						</h3>
-						<span>Massimo Artemisis</span>
-						<div class="job-lctn">
-							<i class="la la-map-marker"></i>Sacramento, California
-						</div>
-						</div>
-						<div class="job-style-bx">
-						<span class="job-is ft ">Full time</span>
-						<span class="fav-job">
-							<i class="la la-heart-o"></i>
-						</span>
-						<i>5 months ago</i>
-						</div>
-					</div>
-					<!-- Job -->
-					<div class="job-listing wtabs">
-						<div class="job-title-sec">
-						<div class="c-logo">
-							<img src="images/resource/l4.png" alt="">
-						</div>
-						<h3>
-							<a href="#" title="">Marketing Dairector</a>
-						</h3>
-						<span>Massimo Artemisis</span>
-						<div class="job-lctn">
-							<i class="la la-map-marker"></i>Sacramento, California
-						</div>
-						</div>
-						<div class="job-style-bx">
-						<span class="job-is ft ">Full time</span>
-						<span class="fav-job">
-							<i class="la la-heart-o"></i>
-						</span>
-						<i>5 months ago</i>
-						</div>
-					</div>
-					<!-- Job -->
-					<div class="job-listing wtabs">
-						<div class="job-title-sec">
-						<div class="c-logo">
-							<img src="images/resource/l5.png" alt="">
-						</div>
-						<h3>
-							<a href="#" title="">Application Developer</a>
-						</h3>
-						<span>Massimo Artemisis</span>
-						<div class="job-lctn">
-							<i class="la la-map-marker"></i>Sacramento, California
-						</div>
-						</div>
-						<div class="job-style-bx">
-						<span class="job-is pt ">Part time</span>
-						<span class="fav-job">
-							<i class="la la-heart-o"></i>
-						</span>
-						<i>5 months ago</i>
-						</div>
-					</div>
-					<!-- Job -->
-					<div class="job-listing wtabs">
-						<div class="job-title-sec">
-						<div class="c-logo">
-							<img src="images/resource/l6.png" alt="">
-						</div>
-						<h3>
-							<a href="#" title="">Social Media and Public</a>
-						</h3>
-						<span>Massimo Artemisis</span>
-						<div class="job-lctn">
-							<i class="la la-map-marker"></i>Sacramento, California
-						</div>
-						</div>
-						<div class="job-style-bx">
-						<span class="job-is fl ">Freelance</span>
-						<span class="fav-job">
-							<i class="la la-heart-o"></i>
-						</span>
-						<i>5 months ago</i>
-						</div>
-					</div>
-					<!-- Job -->
-					<div class="job-listing wtabs">
-						<div class="job-title-sec">
-						<div class="c-logo">
-							<img src="images/resource/l2.png" alt="">
-						</div>
-						<h3>
-							<a href="#" title="">C Developer (Senior) C .Net</a>
-						</h3>
-						<span>Massimo Artemisis</span>
-						<div class="job-lctn">
-							<i class="la la-map-marker"></i>Sacramento, California
-						</div>
-						</div>
-						<div class="job-style-bx">
-						<span class="job-is pt ">Part time</span>
-						<span class="fav-job">
-							<i class="la la-heart-o"></i>
-						</span>
-						<i>5 months ago</i>
-						</div>
-					</div>
-					<!-- Job -->
-					<div class="job-listing wtabs">
-						<div class="job-title-sec">
-						<div class="c-logo">
-							<img src="images/resource/l3.png" alt="">
-						</div>
-						<h3>
-							<a href="#" title="">Regional Sales Manager South</a>
-						</h3>
-						<span>Massimo Artemisis</span>
-						<div class="job-lctn">
-							<i class="la la-map-marker"></i>Sacramento, California
-						</div>
-						</div>
-						<div class="job-style-bx">
-						<span class="job-is ft ">Full time</span>
-						<span class="fav-job">
-							<i class="la la-heart-o"></i>
-						</span>
-						<i>5 months ago</i>
-						</div>
-					</div>
-					<!-- Job -->
-					<div class="job-listing wtabs">
-						<div class="job-title-sec">
-						<div class="c-logo">
-							<img src="images/resource/l4.png" alt="">
-						</div>
-						<h3>
-							<a href="#" title="">Marketing Dairector</a>
-						</h3>
-						<span>Massimo Artemisis</span>
-						<div class="job-lctn">
-							<i class="la la-map-marker"></i>Sacramento, California
-						</div>
-						</div>
-						<div class="job-style-bx">
-						<span class="job-is ft ">Full time</span>
-						<span class="fav-job">
-							<i class="la la-heart-o"></i>
-						</span>
-						<i>5 months ago</i>
-						</div>
-					</div>
-					<!-- Job -->
-					<div class="job-listing wtabs">
-						<div class="job-title-sec">
-						<div class="c-logo">
-							<img src="images/resource/l5.png" alt="">
-						</div>
-						<h3>
-							<a href="#" title="">Application Developer</a>
-						</h3>
-						<span>Massimo Artemisis</span>
-						<div class="job-lctn">
-							<i class="la la-map-marker"></i>Sacramento, California
-						</div>
-						</div>
-						<div class="job-style-bx">
-						<span class="job-is pt ">Part time</span>
-						<span class="fav-job">
-							<i class="la la-heart-o"></i>
-						</span>
-						<i>5 months ago</i>
-						</div>
-					</div>
-					<!-- Job -->
-					</div>
+
+
 					<div class="pagination">
-					<ul>
-						<li class="prev">
-						<a href="#">
-							<i class="la la-long-arrow-left"></i> Prev </a>
-						</li>
-						<li>
-						<a href="#">1</a>
-						</li>
-						<li class="active">
-						<a href="#">2</a>
-						</li>
-						<li>
-						<a href="#">3</a>
-						</li>
-						<li>
-						<span class="delimeter">...</span>
-						</li>
-						<li>
-						<a href="#">14</a>
-						</li>
-						<li class="next">
-						<a href="#">Next <i class="la la-long-arrow-right"></i>
-						</a>
-						</li>
-					</ul>
+						{!! $internships->render() !!}
 					</div>
 					<!-- Pagination -->
 				</div>
+
+				
+
 			</div>
 		</div>
 		</div>

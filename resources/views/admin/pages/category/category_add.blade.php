@@ -29,6 +29,11 @@
                 <a href="{{route('category.index')}}" class="btn btn-info btn-sm">Cancel</a>
             </div>
 
+            <div class="form-group mt-3">
+                <button class="btn btn-primary btn-sm">Add Class(Optional)</button>
+                <a href="{{route('category.index')}}" class="btn btn-info btn-sm">Cancel</a>
+            </div>
+
         </form>
 
 

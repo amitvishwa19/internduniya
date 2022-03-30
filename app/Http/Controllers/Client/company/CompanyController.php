@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client\company;
 
 use App\Models\User;
+use GuzzleHttp\Client;
 use App\Models\Category;
 use App\Models\Corporate;
 use App\Models\Intenship;
@@ -172,6 +173,7 @@ class CompanyController extends Controller
         $internship->total_opening = $request->total_opening;
         $internship->state = $request->state;
         $internship->city = $request->city;
+        $internship->pincode = $request->post_code;
         $internship->type = $request->type;
         $internship->status = $request->status;
         $internship->save();
@@ -187,7 +189,7 @@ class CompanyController extends Controller
 
     public function internship_update(Request $request,$id){
 
-        //dd($request->categories);
+        //dd($request->all());
         //$internships = Intenship::orderby('created_at','desc')->get();
         $internship = Intenship::findOrFail($id);
         $internship->title = $request->title;
@@ -201,6 +203,7 @@ class CompanyController extends Controller
         $internship->total_opening = $request->total_opening;
         $internship->state = $request->state;
         $internship->city = $request->city;
+        $internship->pincode = $request->post_code;
         $internship->type = $request->type;
         $internship->status = $request->status;
         $internship->save();
@@ -282,5 +285,15 @@ class CompanyController extends Controller
             'message'    =>'Password Updated Successfully',
             'alert-type' => 'success',
         ]);
+    }
+
+    public function getlocation(Request $request){
+
+        //$data = file_get_contents('https://postalpincode.in/api/pincode/'.$request->pincode);
+        $client = new Client();
+
+        $response = $client->get('http://postalpincode.in/api/pincode/'.$request->pincode);
+
+        return $response;
     }
 }

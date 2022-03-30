@@ -74,7 +74,7 @@
 						</div><!-- Heading -->
 						<div class="cat-sec">
 							<div class="row no-gape">
-								<div class="col-lg-3 col-md-3 col-sm-6">
+								<!-- <div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="p-category">
 										<a href="#" title="">
 											<i class="la la-bullhorn"></i>
@@ -110,10 +110,6 @@
 										</a>
 									</div>
 								</div>
-							</div>
-						</div>
-						<div class="cat-sec">
-							<div class="row no-gape">
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="p-category">
 										<a href="#" title="">
@@ -149,9 +145,22 @@
 											<p>(3 open positions)</p>
 										</a>
 									</div>
-								</div>
+								</div> -->
+
+								@foreach($categories as $category)
+									<div class="col-lg-3 col-md-3 col-sm-6">
+										<div class="p-category">
+											<a href="{{route('app.internships',['category'=>$category->slug])}}" title="">
+												<i class="{{$category->class}}"></i>
+												<span>{{$category->name}}</span>
+												<p>({{$category->internships->count()}} Internships)</p>
+											</a>
+										</div>
+									</div>
+								@endforeach
 							</div>
 						</div>
+					
 					</div>
 					<div class="col-lg-12">
 						<!-- <div class="browse-all-cat">
@@ -215,7 +224,7 @@
 					</div>
 					<div class="col-lg-12">
 						<div class="browse-all-cat">
-							<a href="{{route('app.internships')}}" title="">Load more listings</a>
+							<a href="{{route('app.internships',['category'=>'all'])}}" title="">Load more listings</a>
 						</div>
 					</div>
 				</div>

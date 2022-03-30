@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Category;
 use App\Models\Corporate;
 use App\Models\Intenship;
 use App\Models\Subscription;
@@ -51,11 +52,15 @@ class ClientController extends Controller
             $q->where('slug', '=', 'blogs');
         })->get();
 
+        $internship_category = Category::where('slug','internship-categories')->first();
+        $categories = Category::where('parent_id', $internship_category->id )->where('favourite',true)->orderby('created_at','desc')->get();
+
         $corporates = Corporate::orderby('created_at','desc')->get();
         return view('client.pages.home')->with('internships',$internships)
                                         ->with('corporates',$corporates)
                                         ->with('reviews',$reviews)
-                                        ->with('blogs',$blogs);
+                                        ->with('blogs',$blogs)
+                                        ->with('categories',$categories);
     }
 
     public function blogs()
@@ -122,9 +127,19 @@ class ClientController extends Controller
         return redirect() ->route('app.home')->withCookie(cookie('subscription','subscription',10));
     }
 
-    public function internships(){
+    public function internships($category){
 
-        return view('client.pages.internships');
+        if($category == 'all'){
+            $internships = Intenship::orderby('created_at','desc')
+                                ->where('status',true)
+                                ->where('approved',true)
+                                ->paginate(10);
+        }else{
+            $internship_category = Category::where('slug',$category)->first();
+            $internships = $internship_category->internships()->paginate(10);
+        }
+        //dd($category);
+        return view('client.pages.internships')->with('internships',$internships);
     }
 
     public function add_favourite_internship($id){

@@ -30,7 +30,7 @@
 
 				@if (session('message'))
 				<div class="alert {{session('alert-type')}} alert-dismissible fade show mt-2 mb-5" role="alert">
-					{{ session('message') }}
+					{{ session('message') }}. <span class="ml-1"><a href="{{route('student.profile')}}">Update Now</a></span>
 					<button type="button" class="close alert_close_button" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>

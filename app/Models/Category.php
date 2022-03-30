@@ -52,21 +52,8 @@ class Category extends Model
         return $this->belongsToMany('App\Models\Post','post_category');
     }
 
-    public function products()
+    public function internships()
     {
-        return $this->belongsToMany('App\Models\Product','product_categories');
-    }
-
-    public function allProducts()
-    {
-        $allProducts = collect([]);
-        $mainCategoryProducts = $this->products;
-        $allProducts = $allProducts->concat($mainCategoryProducts);
-        if($this->child->isNotEmpty()){
-            foreach($this->child as $chld){
-                $allProducts = $allProducts->concat($chld->products);
-            }
-        }
-        return $allProducts;
+        return $this->belongsToMany('App\Models\Intenship','intenship_category');
     }
 }

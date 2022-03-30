@@ -73,6 +73,19 @@
                     <small id="emailHelp" class="form-text text-muted"><i>The name is how it appears on your site</i>.</small>
                 </div>
 
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Add Class</label>
+                    <input type="text" class="form-control" name="class" value="{{ old('class') }}">
+                    <small id="emailHelp" class="form-text text-muted"><i>Additional Class</i>.</small>
+                </div>
+
+                <div class="checkbox form-group">
+                    <input id="checkbox0" type="checkbox" name="favourite">
+                    <label for="checkbox0">
+                        Favourite
+                    </label>
+                </div>
+
                 <button class="btn btn-info waves-effect waves-light btn-sm">Add Category</button>
 
             </form>

@@ -37,6 +37,7 @@ class GoogleLogin extends Controller
                 return redirect('/');
      
             }else{
+                //dd($user->user['family_name']);
                 $newUser = User::create([
                     'firstName' => $user->user['given_name'],
                     'lastName' => $user->user['family_name'],

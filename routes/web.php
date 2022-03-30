@@ -57,7 +57,7 @@ Route::get('/news', [ClientController::class, 'blogs'])->name('app.blogs');
 Route::get('/news/{slug}', [ClientController::class, 'blog'])->name('app.blog');
 Route::get('/dashboard', [ClientController::class, 'dashboard'])->name('app.user.dashboard');
 
-Route::get('/internships', [ClientController::class, 'internships'])->name('app.internships');
+Route::get('/internships/{category}', [ClientController::class, 'internships'])->name('app.internships');
 Route::get('/internship/{id}', [ClientController::class, 'detail_internship'])->name('app.internship.detail');
 Route::get('/blog/{slug}', [ClientController::class, 'blog_detail'])->name('app.blog.detail');
 
@@ -66,6 +66,8 @@ Route::get('/terms', [ClientController::class, 'terms'])->name('app.terms');
 Route::get('/privacy', [ClientController::class, 'privacy'])->name('app.privacy');
 
 Route::get('/auth/verify',[RegisterController::class,'verifyUser'])->name('app.auth.verify');
+
+Route::get('/getlocation',[CompanyController::class,'getlocation'])->name('generate.location');
 
 //Student
 //Route::prefix('/student')->middleware(['student','auth'])->group(base_path('routes/student.php'));
