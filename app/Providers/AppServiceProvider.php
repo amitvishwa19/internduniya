@@ -36,10 +36,7 @@ class AppServiceProvider extends ServiceProvider
             //activity()->log('App ServiceProvider boot method ,Activity will log in local enviorment');
         }
 
-        //Binding of services
-        app()->bind('Hello',function(){
-            return 'Helloooooooos';
-        });
+       
 
 
 

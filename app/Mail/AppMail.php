@@ -33,7 +33,7 @@ class AppMail extends Mailable
     public function build()
     {
 
-        return $this->from('info@devlomatix.com',env('APP_NAME'))
+        return $this->from(env('MAIL_FROM_ADDRESS'),env('APP_NAME'))
             ->subject( $this->subject)
             ->view($this->view);
     }

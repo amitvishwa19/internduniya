@@ -18,7 +18,7 @@
     </tr>
     <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
         <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; color: #3f5db3; font-size: 14px; vertical-align: top; margin: 0; padding: 10px 10px;" valign="top">
-            Click <a href="{{URL::to('/')}}/auth/verify?code={{$data['verification_code']}}">here</a> to activate your account.
+            Click <a href="{{env('APP_URL')}}/auth/verify?code={{$data['verification_code']}}">here</a> to activate your account.
             <br><br>
 
         </td>
