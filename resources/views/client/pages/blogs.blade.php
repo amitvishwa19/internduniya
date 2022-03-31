@@ -87,25 +87,12 @@
                                 <span><a href="#" title=""><img src="{{$random_blog->feature_image}}" alt="" /></a></span>
                                 <div class="mb-info">
                                     <h3><a href="#" title="">{{$random_blog->title}}</a></h3>
-                                    <span>October 25, 2017</span>
+                                    <span>{{\Carbon\Carbon::parse($random_blog->created_at)->isoFormat('MMM Do YYYY')}}</span>
                                 </div>
                             </div>
                             @endforeach
 
-                            <div class="mini-blog">
-                                <span><a href="#" title=""><img src="images/resource/mb2.jpg" alt="" /></a></span>
-                                <div class="mb-info">
-                                    <h3><a href="#" title="">How to “Woo” a Recruiter and Land Your Dream Job</a></h3>
-                                    <span>October 25, 2017</span>
-                                </div>
-                            </div>
-                            <div class="mini-blog">
-                                <span><a href="#" title=""><img src="images/resource/mb3.jpg" alt="" /></a></span>
-                                <div class="mb-info">
-                                    <h3><a href="#" title="">Hey Job Seeker, It’s Time To Get Up And Get Hired</a></h3>
-                                    <span>October 25, 2017</span>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <!-- <div class="widget">
