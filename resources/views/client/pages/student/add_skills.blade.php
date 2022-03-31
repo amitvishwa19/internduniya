@@ -23,16 +23,30 @@
                     </div>
                     @endif
 
+                    @if(count($errors))
+                        <div class="validation_error_list alert alert-info mt-2">
+                            <strong>Whoops!</strong> There were some problems with your input.
+                            <br/>
+
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li><span class="mt-2">*</span> {{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+
                     <div class="row">
                         <div class="col-lg-8">
-                            <span class="pf-title">Skill Title</span>
+                            <span class="pf-title">Skill Title*</span>
                             <div class="pf-field">
                                 <input type="text" name="title" value="">
                             </div>
                         </div>
                         
                         <div class="col-lg-4">
-                            <span class="pf-title">Skill Percentage</span>
+                            <span class="pf-title">Skill Percentage*</span>
                             <div class="pf-field">
                                 <input type="number" name="percentage" value="">
                             </div>

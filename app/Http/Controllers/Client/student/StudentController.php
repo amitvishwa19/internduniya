@@ -93,8 +93,22 @@ class StudentController extends Controller
     }
     public function resume_education_add(Request $request){
 
-        //dd($request->all());
-        //dd(auth()->user()->resume->id);
+        $this->validate($request,[
+            'title' => 'required|max:255',
+            'type' => 'required|max:255',
+            'organization' => 'required|min:5|max:255',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after:start_date',
+            
+
+        ],[
+            'title.required' => ' Title field is required',
+            'type.required' => ' Type field is required',
+            'organization.required' => ' Please specify organisation',
+            'start_date.required' => ' Start date is required',
+            'end_date.required' => ' End date is required',
+            
+        ]);
 
         if(auth()->user()->resume->id){
 
@@ -230,6 +244,14 @@ class StudentController extends Controller
     }
     public function resume_skills_add(Request $request){
 
+        $this->validate($request,[
+            'title' => 'required|max:255',
+            'percentage' => 'required|max:3',
+        ],[
+            'title.required' => ' Title field is required',
+            'percentage.required' => ' Percentage field is required',
+        ]);
+
         $skill = new Skill;
         $skill->resume_id = auth()->user()->resume->id;
         $skill->title = $request->title;
@@ -282,6 +304,20 @@ class StudentController extends Controller
         return view('client.pages.student.add_achivements')->with('user',$user);
     }
     public function resume_achivement_add(Request $request){
+        
+        $this->validate($request,[
+            'title' => 'required|min:5|max:255',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after:start_date',
+            'description' => 'required',
+
+        ],[
+            'title.required' => ' Title field is required',
+            'start_date.required' => ' Start date is required',
+            'end_date.required' => ' End date is required',
+            'description.required' => ' Please Fill description',
+        ]);
+
 
         $achivement = new Achivement;
         $achivement->resume_id = auth()->user()->resume->id;
