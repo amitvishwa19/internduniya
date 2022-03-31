@@ -74,7 +74,7 @@ class ClientController extends Controller
         $posts = Post::whereHas('categories', function($q)
         {
             $q->where('slug', '=', 'blogs');
-        })->paginate(1);
+        })->paginate(10);
 
         //dd($posts);
 
