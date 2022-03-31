@@ -169,8 +169,8 @@
                             <div class="mini-blog">
                                 <span><a href="#" title=""><img src="{{$blog->feature_image}}" alt="" /></a></span>
                                 <div class="mb-info">
-                                    <h3><a href="#" title="">Canada adds 12,500 jobs in modest July rebound</a></h3>
-                                    <span>October 25, 2017</span>
+                                    <h3><a href="#" title="">{{$blog->title}}</a></h3>
+                                    <span>{{\Carbon\Carbon::parse($blog->created_at)->isoFormat('MMM Do YYYY')}}</span>
                                 </div>
                             </div>
                             @endforeach
