@@ -113,7 +113,7 @@
                             <a href="#" title=""><i class="la la-angle-right"></i>WordPress.org</a>
                         </div>
                     </div> -->
-                    <div class="widget">
+                    <!-- <div class="widget">
                         <h3>Tags</h3>
                         <div class="tags_widget">
                             <a href="#" title="">Adwords</a>
@@ -123,7 +123,7 @@
                             <a href="#" title="">Trade</a>
                             <a href="#" title="">Traffic</a>
                         </div>
-                    </div>
+                    </div> -->
                 </aside>
                 </div>
         </div>
