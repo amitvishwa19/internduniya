@@ -23,36 +23,49 @@
                     </div>
                     @endif
 
+                    @if(count($errors))
+                        <div class="validation_error_list alert alert-info mt-2">
+                            <strong>Whoops!</strong> There were some problems with your input.
+                            <br/>
+
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li><span class="mt-2">*</span> {{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="row">
                         <div class="col-lg-6">
-                            <span class="pf-title">Title</span>
+                            <span class="pf-title">Title*</span>
                             <div class="pf-field">
-                                <input type="text" name="title" value="">
+                                <input type="text" name="title" value="{{old('title')}}">
                             </div>
                         </div>
                        
                         <div class="col-lg-6">
-                            <span class="pf-title">Organization</span>
+                            <span class="pf-title">Organization*</span>
                             <div class="pf-field">
-                                <input type="text" name="organization" value="">
+                                <input type="text" name="organization" value="{{old('organization')}}">
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <span class="pf-title">Start Date</span>
+                            <span class="pf-title">Start Date*</span>
                             <div class="pf-field">
-                                <input type="date" name="start_date" value="">
+                                <input type="date" name="start_date" value="{{old('start_date')}}">
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <span class="pf-title">End Date</span>
+                            <span class="pf-title">End Date*</span>
                             <div class="pf-field">
-                                <input type="date" name="end_date" value="">
+                                <input type="date" name="end_date" value="{{old('end_date')}}">
                             </div>
                         </div>
                         <div class="col-lg-12">
-                            <span class="pf-title">Description</span>
+                            <span class="pf-title">Description*</span>
                             <div class="pf-field">
-                                <textarea name="description" rows="5"></textarea>
+                                <textarea name="description" rows="5">{{old('description')}}</textarea>
                                 
                             </div>
                         </div>

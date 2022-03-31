@@ -152,9 +152,22 @@ class StudentController extends Controller
         return view('client.pages.student.add_experience')->with('user',$user);
     }
     public function resume_experience_add(Request $request){
-
-
         //dd($request->all());
+        
+        $this->validate($request,[
+            'title' => 'required|min:5|max:255',
+            'organization' => 'required|min:5|max:255',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after:start_date',
+            'description' => 'required',
+
+        ],[
+            'title.required' => ' Title for experience is required',
+            'organization.required' => ' Please specify organisation',
+            'start_date.required' => ' Start date is required',
+            'end_date.required' => ' End date is required',
+            'description.required' => ' Please Fill description',
+        ]);
 
         $experience = new Experience;
         $experience->resume_id = auth()->user()->resume->id;
