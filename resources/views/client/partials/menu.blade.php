@@ -22,7 +22,7 @@
             @endif
             
         @else
-            <a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Get Internship</a>
+            <a href="{{route('app.internships',['category'=>'all'])}}" title="" class="post-job-btn"><i class="la la-plus"></i>Get Internship</a>
         @endif
             
         </div><!-- Btn Extras -->
