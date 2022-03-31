@@ -72,7 +72,16 @@ class ClientController extends Controller
     public function blogs()
     {
         $posts = Post::where('status','published')->get();
-        return view('client.pages.blogs',compact('posts'));
+
+        $random_blogs = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'blogs');
+        })->where('status','published')->limit(5)->get();
+
+
+        //$randomPosts
+        return view('client.pages.blogs')->with('posts',$posts)
+                                        ->with('random_blogs',$random_blogs);
     }
 
     public function blog_detail($slug)
@@ -115,6 +124,10 @@ class ClientController extends Controller
         {
             $q->where('slug', '=', 'privacy');
         })->first();
+
+        
+
+
         return view('client.pages.privacy')->with('privacy',$privacy);
     }
 

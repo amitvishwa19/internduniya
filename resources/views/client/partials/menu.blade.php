@@ -1,15 +1,17 @@
 <div class="responsive-header">
     <div class="responsive-menubar">
-        <div class="res-logo"><a href="index.html" title=""><img src="{{setting('app_icon')}}" alt="" /></a></div>
+        <div class="res-logo mt-2"><a href="index.html" title=""><img src="{{setting('app_icon')}}" alt="" /></a></div>
         <div class="menu-resaction">
             <div class="res-openmenu">
-                <img src="{{setting('app_icon')}}" alt="" /> Menu
+                <img src="" alt="" /> Menu
             </div>
             <div class="res-closemenu">
-                <img src="{{setting('app_icon')}}" alt="" /> Close
+                <img src="" alt="" /> Close
             </div>
         </div>
     </div>
+
+
     <div class="responsive-opensec">
         <div class="btn-extars">
         @if(Auth::user())
@@ -64,6 +66,7 @@
             </ul>
         </div>
     </div>
+
 </div>
 	
 <header class="stick-top forsticky">

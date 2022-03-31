@@ -346,7 +346,7 @@
 					<div class="col-lg-12">
 						<div class="simple-text">
 							<h3>Gat a question?</h3>
-							<span>We're here to help. Check out our FAQs, send us an email or call us at 1 (1111) 1111-1111111</span>
+							<span>We're here to help. Check out our FAQs, send us an email or call us at (+91) 6353782788</span>
 						</div>
 					</div>
 				</div>

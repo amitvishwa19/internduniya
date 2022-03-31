@@ -9,8 +9,8 @@
 									<a href="index.html" title=""><img src="{{setting('app_icon')}}" alt="" /></a>
 								</div> -->
 								<span>CoHarni Road, Vadodara 390022, India.</span>
-								<span>+1 1111-111-111</span>
-								<span><a href="https://grandetest.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="345d5a525b745e5b565c415a401a575b59">[email&#160;protected]</a></span>
+								<span>+91 6353782788</span>
+								<span>info@internduniya.com</span>
 								<div class="social">
 									<a href="#" title=""><i class="fa fa-facebook"></i></a>
 									<a href="#" title=""><i class="fa fa-twitter"></i></a>
