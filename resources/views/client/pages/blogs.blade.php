@@ -44,9 +44,9 @@
                         @endforeach
 
                         
+                        {{$posts->links()}}
 
-
-                        <div class="pagination">
+                        <!-- <div class="pagination">
                             <ul>
                                 <li class="prev"><a href="#"><i class="la la-long-arrow-left"></i> Prev</a></li>
                                 <li><a href="#">1</a></li>
@@ -56,7 +56,7 @@
                                 <li><a href="#">14</a></li>
                                 <li class="next"><a href="#">Next <i class="la la-long-arrow-right"></i></a></li>
                             </ul>
-                        </div><!-- Pagination -->
+                        </div> -->
                     </div>
                 </div>
                 <aside class="col-lg-3 column">

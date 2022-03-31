@@ -74,7 +74,9 @@ class ClientController extends Controller
         $posts = Post::whereHas('categories', function($q)
         {
             $q->where('slug', '=', 'blogs');
-        })->get();
+        })->paginate(1);
+
+        //dd($posts);
 
         $random_blogs = Post::whereHas('categories', function($q)
         {
