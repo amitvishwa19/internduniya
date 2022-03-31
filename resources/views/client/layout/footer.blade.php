@@ -5,9 +5,9 @@
 					<div class="col-lg-4 column">
 						<div class="widget">
 							<div class="about_widget">
-								<div class="logo">
-									<a href="index.html" title=""><img src="{{asset('public/client/images/logo/internduniya.png')}}" alt="" /></a>
-								</div>
+								<!-- <div class="logo">
+									<a href="index.html" title=""><img src="{{setting('app_icon')}}" alt="" /></a>
+								</div> -->
 								<span>CoHarni Road, Vadodara 390022, India.</span>
 								<span>+1 1111-111-111</span>
 								<span><a href="https://grandetest.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="345d5a525b745e5b565c415a401a575b59">[email&#160;protected]</a></span>

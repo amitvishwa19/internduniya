@@ -33,10 +33,10 @@
 											<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
 												<div class="job-field">
 													<select data-placeholder="City, province or region" class="chosen-city">
-														<option>New York </option>
-														<option>Istanbul</option>
-														<option>London</option>
-														<option>Russia</option>
+														@foreach($cities as $city)
+															<option>{{$city->name}} </option>
+														@endforeach
+														
 													</select>
 													<i class="la la-map-marker"></i>
 												</div>

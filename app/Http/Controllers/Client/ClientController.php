@@ -55,11 +55,17 @@ class ClientController extends Controller
         $internship_category = Category::where('slug','internship-categories')->first();
         $categories = Category::where('parent_id', $internship_category->id )->where('favourite',true)->orderby('created_at','desc')->get();
 
+        $internship_cities = Category::where('slug','internship-cities')->first();
+        $cities = Category::where('parent_id', $internship_cities->id )->orderby('created_at','desc')->get();
+
+        //dd($cities);
+
         $corporates = Corporate::orderby('created_at','desc')->get();
         return view('client.pages.home')->with('internships',$internships)
                                         ->with('corporates',$corporates)
                                         ->with('reviews',$reviews)
                                         ->with('blogs',$blogs)
+                                        ->with('cities',$cities)
                                         ->with('categories',$categories);
     }
 

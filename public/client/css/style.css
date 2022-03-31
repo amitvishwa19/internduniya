@@ -11887,3 +11887,13 @@ header.style4 .account-btns > li a,
     height: 45px !important;
     border-radius: 20px !important;
 }
+.post-job-btn{
+    background-color: #21A6E0 !important;
+    border: 2px solid  #21A6E0 !important;
+}
+
+.sticky .post-job-btn{
+    background-color: #fff !important;
+    border: 2px solid  #21A6E0 !important;
+    color: #21A6E0 !important;
+}
