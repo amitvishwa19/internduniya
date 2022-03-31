@@ -167,9 +167,9 @@
 
                             @foreach($random_blog as $blog)
                             <div class="mini-blog">
-                                <span><a href="#" title=""><img src="{{$blog->feature_image}}" alt="" /></a></span>
+                                <span><a href="{{route('app.blog.detail',$blog->slug)}}" title=""><img src="{{$blog->feature_image}}" alt="" /></a></span>
                                 <div class="mb-info">
-                                    <h3><a href="#" title="">{{$blog->title}}</a></h3>
+                                    <h3><a href="{{route('app.blog.detail',$blog->slug)}}" title="">{{$blog->title}}</a></h3>
                                     <span>{{\Carbon\Carbon::parse($blog->created_at)->isoFormat('MMM Do YYYY')}}</span>
                                 </div>
                             </div>

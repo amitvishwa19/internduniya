@@ -84,9 +84,9 @@
 
                             @foreach($random_blogs as $random_blog)
                             <div class="mini-blog">
-                                <span><a href="#" title=""><img src="{{$random_blog->feature_image}}" alt="" /></a></span>
+                                <span><a href="{{route('app.blog.detail',$random_blog->slug)}}" title=""><img src="{{$random_blog->feature_image}}" alt="" /></a></span>
                                 <div class="mb-info">
-                                    <h3><a href="#" title="">{{$random_blog->title}}</a></h3>
+                                    <h3><a href="{{route('app.blog.detail',$random_blog->slug)}}" title="">{{$random_blog->title}}</a></h3>
                                     <span>{{\Carbon\Carbon::parse($random_blog->created_at)->isoFormat('MMM Do YYYY')}}</span>
                                 </div>
                             </div>
