@@ -1,12 +1,12 @@
 <div class="responsive-header">
     <div class="responsive-menubar">
-        <div class="res-logo"><a href="index.html" title=""><img src="images/resource/logo.png" alt="" /></a></div>
+        <div class="res-logo"><a href="index.html" title=""><img src="{{setting('app_icon')}}" alt="" /></a></div>
         <div class="menu-resaction">
             <div class="res-openmenu">
-                <img src="{{asset('public/client/images/icon.png')}}" alt="" /> Menu
+                <img src="{{setting('app_icon')}}" alt="" /> Menu
             </div>
             <div class="res-closemenu">
-                <img src="{{asset('public/client/images/icon2.png')}}" alt="" /> Close
+                <img src="{{setting('app_icon')}}" alt="" /> Close
             </div>
         </div>
     </div>
@@ -71,8 +71,8 @@
         <div class="container">
             <div class="logo">
                 <a href="{{route('app.home')}}" title="">
-                    <img class="hidesticky" src="{{asset('public/client/images/logo/internduniya.png')}}" alt="" />
-                    <img class="showsticky" src="{{asset('public/client/images/logo/internduniya.png')}}" alt="" />
+                    <img class="showsticky" src="{{setting('app_icon')}}" alt="" />
+                    <img class="hidesticky" src="{{setting('app_icon')}}" alt="" />
                 </a>
             </div><!-- Logo -->
             <div class="btn-extars">

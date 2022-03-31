@@ -9,6 +9,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="CreativeLayers">
+	<link rel="shortcut icon" href="{{setting('app_fevicon')}}">
 
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="{{asset('public/client/css/bootstrap-grid.css')}}" />
