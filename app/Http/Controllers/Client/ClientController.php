@@ -152,6 +152,9 @@ class ClientController extends Controller
     }
 
     public function internships($category){
+        $internship_cities = Category::where('slug','internship-cities')->first();
+        $cities = Category::where('parent_id', $internship_cities->id )->orderby('created_at','desc')->get();
+
 
         if($category == 'all'){
             $internships = Intenship::orderby('created_at','desc')
@@ -163,7 +166,7 @@ class ClientController extends Controller
             $internships = $internship_category->internships()->paginate(10);
         }
         //dd($category);
-        return view('client.pages.internships')->with('internships',$internships);
+        return view('client.pages.internships')->with('internships',$internships)->with('cities',$cities);
     }
 
     public function add_favourite_internship($id){
@@ -201,5 +204,42 @@ class ClientController extends Controller
         return redirect()->back()->withCookie(cookie('cookie_consent','cookie_consent',(365 * 24 * 60)));
     }
 
+    public function search_internships(Request $request){
 
+        $search_title = $request->input('title');
+        $search_city = $request->input('city');
+
+        //dd($search_title);
+
+        $internship_cities = Category::where('slug','internship-cities')->first();
+        $cities = Category::where('parent_id', $internship_cities->id )->orderby('created_at','desc')->get();
+
+
+        
+
+        if($search_title){
+            $internships = Intenship::orderby('created_at','desc')
+                                ->where('title', 'like', "%$search_title%")
+                                ->orWhere('description', 'like', "%$search_title%")
+                                ->orWhere('city', $search_city)
+                                ->where('status',true)
+                                ->where('approved',true)
+                                ->paginate(10);
+
+        }elseif($search_city){
+
+            $internships = Intenship::orderby('created_at','desc')
+                                ->where('title', 'like', "%$search_title%")
+                                ->orWhere('description', 'like', "%$search_title%")
+                                ->orWhere('city', $search_city)
+                                ->where('status',true)
+                                ->where('approved',true)
+                                ->paginate(10);
+        }
+
+        //$internships = Intenship::where('title', 'like', "%$search_title%")->paginate(10);
+        //dd($internships);
+
+        return view('client.pages.internships_search_result')->with('internships',$internships)->with('cities',$cities);
+    }
 }

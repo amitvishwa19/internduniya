@@ -8,7 +8,8 @@
 
     <!-- Meta -->
     <meta name="description" content="CRMS made with Laravel">
-    <meta name="author" content="Digizigs">
+    <meta name="author" content="Devlomatix Solutions">
+    <link rel="shortcut icon" href="{{setting('app_fevicon')}}">
 
     <!-- Favicon -->
     {{-- <link rel="icon" href="{{setting('app.fevicon')}}" type="image/ico" /> --}}

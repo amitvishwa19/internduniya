@@ -153,10 +153,10 @@ class UserController extends Controller
     {
         //dd($request->all());
 
-        $validate = $request->validate([
-            'firstName' => 'required',
-            'lastName' => 'required',
-        ]);
+        // $validate = $request->validate([
+        //     'firstName' => 'required',
+        //     'lastName' => 'required',
+        // ]);
 
 
         $user->firstName = $request->firstName;
@@ -165,6 +165,12 @@ class UserController extends Controller
         $user->status = $request->status;
         $user->corporate_id = $request->corporate_type;
         $user->role = $request->role;
+        if($request->admin){
+            $user->type = 'admin';
+        }else{
+            $user->type = 'user';
+        }
+
         $user->update();
 
         $user->syncRoles($request->roles);

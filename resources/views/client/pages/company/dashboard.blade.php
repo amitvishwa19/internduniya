@@ -12,6 +12,8 @@
 				<span><i class="la la-file-text"></i><strong>{{$applications}}</strong> Application</span>
 				<span><i class="la la-users"></i><strong>{{$active_internship}}</strong> Active Internship</span>
 			</div>
+
+			@if($internships->count() > 0)
 			<table>
 				<thead>
 					<tr>
@@ -56,6 +58,7 @@
 
 				</tbody>
 			</table>
+			@endif
 		</div>
 	</div>
 </div>

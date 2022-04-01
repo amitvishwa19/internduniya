@@ -60,6 +60,7 @@ Route::get('/dashboard', [ClientController::class, 'dashboard'])->name('app.user
 Route::get('/internships/{category}', [ClientController::class, 'internships'])->name('app.internships');
 Route::get('/internship/{id}', [ClientController::class, 'detail_internship'])->name('app.internship.detail');
 Route::get('/blog/{slug}', [ClientController::class, 'blog_detail'])->name('app.blog.detail');
+Route::get('/search', [ClientController::class, 'search_internships'])->name('app.internship.search');
 
 
 Route::get('/terms', [ClientController::class, 'terms'])->name('app.terms');

@@ -14,14 +14,14 @@
                 <div class="login-content">
                     <div class="brand-logo">
                         <a href="{{route('app.home')}}">
-                            <img src="{{setting('app_icon')}}" alt="" style="width: 150px;">
+                            <img src="{{setting('app_icon')}}" alt="" style="width: 200px;">
                          </a>
                     </div>
 
                     <div class="login-form">
                         <form method="POST" action="{{ route('register') }}" class="mg-b-20">
                             @csrf
-                            <h5 class="info-title">Sign Up for New account</h5>
+                            <h5 class="info-title" style="font-size:14px">Sign Up for New account</h5>
 
                             @if(Session::has('inactive'))
                               <!-- <p class="alert alert-info">{{ Session::get('message') }}</p> -->

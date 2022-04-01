@@ -102,10 +102,16 @@
             </div>
 
 
-            <div class=" check-success  mt-2 col-md-12">
+            <!-- <div class=" check-success  mt-2 col-md-12">
                 <label><b>Notify User</b></label><br>
                 <input type="checkbox" checked="checked" value="1" id="checkbox2">
                 <label for="checkbox2">Notify User</label>
+            </div> -->
+
+            <div class=" check-success  mt-2 col-md-12">
+                <label><b>Admin</b></label><br>
+                <input type="checkbox"  value="1" id="checkbox2" name="admin" {{$user->type == 'admin' ? "checked" : ""}}>
+                <label for="checkbox2">Admin Rights</label>
             </div>
 
             <div class="form-group mt-3 col-md-12">

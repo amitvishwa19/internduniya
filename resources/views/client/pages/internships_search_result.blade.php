@@ -20,8 +20,6 @@
                   <div class="job-search-sec">
                      <div class="job-search">
                         <h4>Explore Thousand Of Intenship With Just Simple Search...</h4>
-
-                        
                         <!-- Search Form -->
 									@include('client.pages.internship_search_form')
 									<!-- Search Form -->
@@ -52,7 +50,7 @@
 			<div class="col-lg-12 column">
 				<div class="modrn-joblist np">
 					<div class="filterbar">
-					<h5>{{$internships->count()}} Internship Open to apply</h5>
+					<h5>{{$internships->count() > 0 ?  $internships->count()." Internship(s) found" : "No internship(s) found"}} </h5>
 					</div>
 				</div>
 			<!-- MOdern Job LIst -->
@@ -88,7 +86,7 @@
 
 
 					<div class="pagination">
-						{!! $internships->render() !!}
+						{!! $internships->links() !!}
 					</div>
 					<!-- Pagination -->
 				</div>

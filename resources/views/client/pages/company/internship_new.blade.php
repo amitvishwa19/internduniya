@@ -40,68 +40,68 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <span class="pf-title">Internship Title</span>
+                    <span class="pf-title">Internship Title*</span>
                     <div class="pf-field">
                     <input type="text" name="title" value="{{old('title')}}">
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <span class="pf-title">Internship Description</span>
+                    <span class="pf-title">Internship Description*</span>
                     <div class="pf-field">
                     <textarea name="description">{{old('description')}}</textarea>
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <span class="pf-title">Internship Requirements</span>
+                    <span class="pf-title">Internship Requirements*</span>
                     <div class="pf-field">
                     <textarea name="requirement">{{old('requirement')}}</textarea>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">Duration(days)</span>
+                    <span class="pf-title">Duration(days)*</span>
                     <div class="pf-field">
                         <input type="text" name="duration" value="{{old('duration')}}">
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">Stipend</span>
+                    <span class="pf-title">Stipend*</span>
                     <div class="pf-field">
                         <input type="text" name="stipend" value="{{old('stipend')}}">
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">Start Date</span>
+                    <span class="pf-title">Start Date*</span>
                     <div class="pf-field">
                         <input type="date" name="start_date" value="{{old('start_date')}}">
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">End Date</span>
+                    <span class="pf-title">End Date*</span>
                     <div class="pf-field">
                         <input type="date" name="end_date" value="{{old('end_date')}}">
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">Last Apply Date</span>
+                    <span class="pf-title">Last Apply Date*</span>
                     <div class="pf-field">
                         <input type="date" name="apply_date" value="{{old('apply_date')}}">
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">Number of openings</span>
+                    <span class="pf-title">Number of openings*</span>
                     <div class="pf-field">
                         <input type="number" name="total_opening" value="{{old('total_opening')}}">
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">Postal Code</span>
+                    <span class="pf-title">Postal Code*</span>
                     <div class="pf-field">
                         <input type="number" id="pincode" name="post_code" value="{{old('post_code')}}" autocomplete="off" >
                         <small class="ml-2" id="pinmsg"></small>
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">City</span>
+                    <span class="pf-title">City*</span>
                     <div class="pf-field">
                         <!-- <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="city">
                             <option value="">-Select City-</option>
@@ -121,7 +121,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">State</span>
+                    <span class="pf-title">State*</span>
                     <div class="pf-field">
                         <!-- <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="state">
                             <option value="">-Select State-</option>
@@ -135,7 +135,7 @@
 
 
                 <div class="col-lg-6">
-                    <span class="pf-title">Opening Type</span>
+                    <span class="pf-title">Opening Type*</span>
                     <div class="pf-field">
                         <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="type">
                             <option value="">-Select Opening Type-</option>
@@ -148,7 +148,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">Category</span>
+                    <span class="pf-title">Category*</span>
                     <div class="pf-field">
                         <select class=" chosen" style="display: none;" name="categories[]" multiple="multiple">
                             @foreach($categories as $category)
@@ -160,7 +160,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="pf-title">Status</span>
+                    <span class="pf-title">Status*</span>
                     <div class="pf-field">
                         <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="status">
                             <option value="">-Select Status-</option>

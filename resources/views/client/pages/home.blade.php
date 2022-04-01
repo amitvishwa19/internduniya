@@ -22,30 +22,15 @@
 								<div class="job-search">
 									<h3>The Easiest Way to Get Your New Internship</h3>
 									<span>Find internship, Employment & Career Opportunities</span>
-									<form>
-										<div class="row">
-											<div class="col-lg-7 col-md-5 col-sm-12 col-xs-12">
-												<div class="job-field">
-													<input type="text" placeholder="Title, keywords or company name" />
-													<i class="la la-keyboard-o"></i>
-												</div>
-											</div>
-											<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
-												<div class="job-field">
-													<select data-placeholder="City, province or region" class="chosen-city">
-														@foreach($cities as $city)
-															<option>{{$city->name}} </option>
-														@endforeach
-														
-													</select>
-													<i class="la la-map-marker"></i>
-												</div>
-											</div>
-											<div class="col-lg-1 col-md-2 col-sm-12 col-xs-12">
-												<button type="submit"><i class="la la-search"></i></button>
-											</div>
-										</div>
-									</form>
+									
+
+									<!-- Search Form -->
+									@include('client.pages.internship_search_form')
+									<!-- Search Form -->
+
+
+
+
 									<!-- <div class="or-browser">
 										<span>Browse job offers by</span>
 										<a href="#" title="">Category</a>
