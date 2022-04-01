@@ -49,7 +49,7 @@ class CorporateController extends Controller
                                 <div class="meta-box">
                                     <div class="media">                                                                           
                                         <div class="media-body align-self-center text-truncate">
-                                            <h6 class="m-0 text-dark"><a href="'.route('company.edit',$company->id).'">'. $company->title.'</h6>
+                                            <h6 class="m-0 text-dark"><a href="'.route('corporate.edit',$company->id).'">'. $company->title.'</h6>
                                             <ul class="p-0 list-inline mb-0">
                                                 <li class="list-inline-item text-muted">'.$company->created_at->diffForHumans().'</li>
                                                 

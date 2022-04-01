@@ -167,7 +167,7 @@ Auth::routes();
 Route::get('/auth/google', [GoogleLogin::class, 'redirectToGoogle'])->name('app.auth.google.login');
 Route::get('/auth/google/callback', [GoogleLogin::class, 'handleGoogleCallback'])->name('app.auth.google.callback');
 
-Route::group(['middleware'=>['auth'],'prefix'=>'admin'],function(){
+Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function(){
 
     Route::get('/',[DashboardController::class,'index'])->name('admin.dashboard');
     Route::resource('/profile',ProfileController::class);
