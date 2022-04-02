@@ -102,6 +102,7 @@ class CorporateController extends Controller
         ]);
 
         $company = New Corporate;
+        $company->user_id = auth()->user()->id;
         $company->title = $request->title;
         $company->slug = Str::slug($request->title,'-');
         $company->description = $request->description;
