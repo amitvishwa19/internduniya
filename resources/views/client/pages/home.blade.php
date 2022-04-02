@@ -267,13 +267,11 @@
 
 							@foreach($corporates as $corporate)
 								<div class="company-img mr-5">
-									<span title="" class="mr-5""><img src="{{$corporate->avatar}}" alt="" /></span>
+									<span title="" class="mr-5""><img src="{{$corporate->avatar}}" alt="" style="height:100px" /></span>
 								</div><!-- Client  -->
 							@endforeach	
 
-							<div class="company-img">
-								<a href="#" title=""><img src="{{asset('public/client/images/resource/cc1.jpg')}}" alt="" /></a>
-							</div><!-- Client  -->
+							
 						</div>
 						
 					</div>
