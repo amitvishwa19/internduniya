@@ -48,8 +48,27 @@ class CompanyController extends Controller
     public function profile_update(Request $request){
 
         //dd($request->all());
-        $user = auth()->user();
 
+        $this->validate($request,[
+            'firstName' => 'required|min:5|max:255',
+            'lastName' => 'required|min:5|max:255',
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'contact' => 'required',
+            'email' => 'required|email',
+            'type' => 'required',
+        ],[
+            'firstName.required' => ' First name of user is required',
+            'lastName.required' => ' Last name of user is required',
+            'title.required' => ' Name of Corporate is required',
+            'description.required' => 'Shord description of corporate is required',
+            'contact.required' => 'Contact detail of Corporate is required',
+            'email.required' => 'Contact email of corporate is required',
+            'type.required' => 'Corporate type is required',
+        ]);
+
+
+        $user = auth()->user();
         $profile = Corporate::findOrFail(auth()->user()->corporate->id);
 
 

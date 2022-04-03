@@ -32,7 +32,7 @@ class CorporateController extends Controller
                     return '<div class="d-flex justify-content-between">
                                 <div class="meta-box">
                                 <div class="media">
-                                    <img src="'.$company->avatar.'" height="40" class="mr-3 align-self-center rounded" alt="...">
+                                    <img src="'.$company->avatar.'" height="50" class="mr-3 align-self-center rounded" alt="...">
                                     <div class="media-body align-self-center text-truncate">
                                         <h6 class="m-0 text-dark"><a href="'.route('corporate.edit',$company->id).'">'. $company->title.'</a></h6>
                                         <ul class="p-0 list-inline mb-0">
@@ -70,6 +70,9 @@ class CorporateController extends Controller
             })
             ->editColumn('type',function(Corporate $corporate){
                 return ucfirst($corporate->type);
+            })
+            ->editColumn('description',function(Corporate $corporate){
+                return str_limit($corporate->description,100);
             })
             ->addColumn('action',function($data){
                 $link = '<div class="d-flex">'.

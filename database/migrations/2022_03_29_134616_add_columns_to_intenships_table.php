@@ -26,7 +26,7 @@ class AddColumnsToIntenshipsTable extends Migration
     public function down()
     {
         Schema::table('intenships', function (Blueprint $table) {
-            //
+            Schema::dropIfExists('pincode');
         });
     }
 }

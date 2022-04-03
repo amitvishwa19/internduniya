@@ -1,4 +1,5 @@
 <div class="responsive-header">
+
     <div class="responsive-menubar">
         <div class="res-logo mt-2"><a href="index.html" title=""><img src="{{setting('app_icon')}}" alt="" /></a></div>
         <div class="menu-resaction">
@@ -74,8 +75,8 @@
         <div class="container">
             <div class="logo">
                 <a href="{{route('app.home')}}" title="">
-                    <img class="showsticky" src="{{setting('app_icon')}}" alt="" />
-                    <img class="hidesticky" src="{{setting('app_icon')}}" alt="" />
+                    <img class="showsticky" src="{{setting('app_icon')}}" alt="" height="30"/>
+                    <img class="hidesticky" src="{{setting('app_icon')}}" alt="" height="30" />
                 </a>
             </div><!-- Logo -->
             <div class="btn-extars">

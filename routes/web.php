@@ -46,6 +46,7 @@ use App\Http\Controllers\Admin\ImpersonateController;
 use App\Http\Controllers\Admin\MailTemplateController;
 use App\Http\Controllers\Admin\SubscriptionController;
 use App\Http\Controllers\Client\company\CompanyController;
+use App\Http\Controllers\Client\RazorpayPaymentController;
 use App\Http\Controllers\Client\student\StudentController;
 use App\Http\Controllers\Client\university\UniversityController;
 
@@ -66,8 +67,15 @@ Route::get('/search', [ClientController::class, 'search_internships'])->name('ap
 Route::get('/terms', [ClientController::class, 'terms'])->name('app.terms');
 Route::get('/privacy', [ClientController::class, 'privacy'])->name('app.privacy');
 
-Route::get('/auth/verify',[RegisterController::class,'verifyUser'])->name('app.auth.verify');
+//Buy Plans
+Route::get('/subscription/{type}', [ClientController::class, 'subscription_plans'])->name('app.subscription');
 
+//Razoropay Payment Controller
+Route::get('/subscription/payment', [RazorpayPaymentController::class, 'index']);
+Route::post('/subscription/payment', [RazorpayPaymentController::class, 'store'])->name('razorpay.subscription.payment');
+
+
+Route::get('/auth/verify',[RegisterController::class,'verifyUser'])->name('app.auth.verify');
 Route::get('/getlocation',[CompanyController::class,'getlocation'])->name('generate.location');
 
 //Student
@@ -111,7 +119,7 @@ Route::group(['middleware'=>['auth','student'],'prefix'=>'student'],function(){
     Route::get('/internship/favorite/add/{id}', [StudentController::class, 'add_favourite_internship'])->name('app.student.favourite.internship');
     Route::get('/internship/favorite/delete/{id}', [StudentController::class, 'delete_favourite_internship'])->name('app.student.favourite.internship.delete');
 
-    Route::get('/internship/apply/add/{id}', [StudentController::class, 'apply_internship'])->name('app.student.apply.internship');
+    Route::get('/internship/apply/add/{id}', [StudentController::class, 'apply_internship'])->name('app.student.apply.internship')->middleware('subscribed');
 
 
     Route::get('/internships/shortlisted', [StudentController::class, 'internships_shortlisted'])->name('student.internships.shortlisted');
@@ -141,8 +149,8 @@ Route::group(['middleware'=>['auth', 'corporate'],'prefix'=>'corporate'],functio
     Route::get('/internship/edit/{id}', [CompanyController::class, 'internship_edit'])->name('company.internship.edit');
     Route::put('/internship/{id}/update', [CompanyController::class, 'internship_update'])->name('company.internship.update');
 
-    Route::get('/internship/new', [CompanyController::class, 'internship_new'])->name('company.internship.new');
-    Route::post('/internship/new/add', [CompanyController::class, 'internship_new_add'])->name('company.internship.new.add');
+    Route::get('/internship/new', [CompanyController::class, 'internship_new'])->name('company.internship.new')->middleware('subscribed');
+    Route::post('/internship/new/add', [CompanyController::class, 'internship_new_add'])->name('company.internship.new.add')->middleware('subscribed');
     Route::get('/internship/delete/{id}', [CompanyController::class, 'internship_delete'])->name('company.internship.delete');
 
     Route::get('/internship/{id}/applications', [CompanyController::class, 'internship_applications'])->name('company.internship.applications');

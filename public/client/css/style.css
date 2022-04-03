@@ -277,8 +277,8 @@ input[type="email"], textarea {
 }
 textarea{
     max-width:100%;
-    min-height:200px;
-    padding: 19px 28px;
+    min-height:100px;
+    padding: 10px !important;
 }
 strong{font-weight:800}
 button{
@@ -11897,4 +11897,48 @@ header.style4 .account-btns > li a,
     background-color: #fff !important;
     border: 2px solid  #21A6E0 !important;
     color: #21A6E0 !important;
+}
+
+.buybtn {
+    background-color: #141F72;
+    float: none;
+    display: inline-block;
+    font-family: Open Sans;
+    font-size: 15px;
+    color: #ffffff;
+    padding: 15px 55px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.buybtn.dark {
+    background-color: #fff;
+    float: none;
+    display: inline-block;
+    font-family: Open Sans;
+    font-size: 15px;
+    color: #141F72;
+    padding: 15px 55px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
 }

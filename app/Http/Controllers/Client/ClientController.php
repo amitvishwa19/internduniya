@@ -60,7 +60,7 @@ class ClientController extends Controller
 
         //dd($cities);
 
-        $corporates = Corporate::orderby('created_at','desc')->get();
+        $corporates = Corporate::orderby('created_at','desc')->where('status',true)->get();
         return view('client.pages.home')->with('internships',$internships)
                                         ->with('corporates',$corporates)
                                         ->with('reviews',$reviews)
@@ -241,5 +241,14 @@ class ClientController extends Controller
         //dd($internships);
 
         return view('client.pages.internships_search_result')->with('internships',$internships)->with('cities',$cities);
+    }
+
+    public function subscription_plans($type){
+
+        if($type == 'student'){
+            return view('client.pages.subscription_plans_student');
+        }else{
+            return view('client.pages.subscription_plans_corporate');
+        }
     }
 }

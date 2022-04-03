@@ -23,32 +23,45 @@
                     </div>
                     @endif
 
+                    @if(count($errors))
+                        <div class="validation_error_list alert alert-info mt-2">
+                            <strong>Whoops!</strong> There were some problems with your input.
+                            <br/>
+
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li><span class="mt-2">*</span> {{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="row">
 
                         <div class="col-lg-6">
-                            <span class="pf-title">First Name</span>
+                            <span class="pf-title">User First Name*</span>
                             <div class="pf-field">
                                 <input type="text" name="firstName" value="{{$user->firstName}}">
                             </div>
                         </div>
 
                         <div class="col-lg-6">
-                            <span class="pf-title">Last Name</span>
+                            <span class="pf-title">User Last Name*</span>
                             <div class="pf-field">
                                 <input type="text" name="lastName" value="{{$user->lastName}}">
                             </div>
                         </div>
 
                         <div class="col-lg-12">
-                            <span class="pf-title">Company Name</span>
+                            <span class="pf-title">Company Name*</span>
                             <div class="pf-field">
                                 <input type="text" name="title" value="{{$user->corporate->title}}">
                             </div>
                         </div>
                         <div class="col-lg-12">
-                            <span class="pf-title">Company Description</span>
+                            <span class="pf-title">Company Description*</span>
                             <div class="pf-field">
-                                <textarea name="description" rows="5">{{$user->corporate->description}}</textarea>
+                                <textarea name="description" rows="2">{{$user->corporate->description}}</textarea>
                                 
                             </div>
                         </div>
@@ -59,13 +72,13 @@
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <span class="pf-title">Company Contact No.</span>
+                            <span class="pf-title">Company Contact No.*</span>
                             <div class="pf-field">
                                 <input type="text" name="contact" value="{{$user->corporate->contact}}">
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <span class="pf-title">Company Email</span>
+                            <span class="pf-title">Company contact Email*</span>
                             <div class="pf-field">
                                 <input type="text" name="email" value="{{$user->corporate->email}}">
                             </div>
@@ -78,7 +91,7 @@
                         </div>
                         
                         <div class="col-lg-6">
-                            <span class="pf-title">Company Type</span>
+                            <span class="pf-title">Company Type*</span>
                             <div class="pf-field">
                                 <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="type">
                                     <option value="">-Select Company Type-</option>

@@ -30,7 +30,14 @@ class User extends Authenticatable
         'avatar_url',
         'role',
         'resume_id',
-        'corporate_id'
+        'corporate_id',
+        'subscribed',
+        'subscription_date',
+        'renew_date',
+        'plan',
+        'action_count',
+        'payment',
+        'amount'
     ];
 
     /**

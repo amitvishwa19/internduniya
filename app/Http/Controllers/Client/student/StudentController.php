@@ -424,6 +424,17 @@ class StudentController extends Controller
             $appliedInternship->intenship_id = $id;
             $appliedInternship->save();
 
+            if(auth()->user()->action_count > 0){
+                $user =  User::findOrFail(auth()->user()->id);
+                $user->action_count -= 1;
+                $user->save();
+
+                if(auth()->user()->action_count -1 == 0 ){
+                   $user->subscribed = false; 
+                }
+                $user->save();
+            }
+
             return redirect()->back()
             ->with([
                 'message'    =>'Internship applied successfully',

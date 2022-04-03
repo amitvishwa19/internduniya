@@ -253,6 +253,8 @@
 	</section>
 	<!-- Reviews -->
 
+	
+
 	<!-- Companies -->
 	<section>
 		<div class="block">
@@ -266,8 +268,8 @@
 						<div class="comp-sec">
 
 							@foreach($corporates as $corporate)
-								<div class="company-img mr-5">
-									<span title="" class="mr-5""><img src="{{$corporate->avatar}}" alt="" style="height:100px" /></span>
+								<div class="company-img">
+									<span title="" class="mr-1""><img src="{{$corporate->avatar}}" alt="" height="80" /></span>
 								</div><!-- Client  -->
 							@endforeach	
 
