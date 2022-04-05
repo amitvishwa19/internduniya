@@ -41,7 +41,7 @@
                     <div class="error-sec">
                         <img src="{{asset('public/client/images/error/40.jpg')}}" alt="" height="100">
                         <span>500 Error, We Are Sorry, Internal server error</span>
-                        <p>Unfortunately the page you were looking for could not be found. It may be temporarily unavailable, moved or no longer exist. Check the Url you entered for any mistakes and try again.</p>
+                        <p>Unfortunately we have encountered with error. It may be temporarily unavailable,we are working on it and will be right back</p>
                        
                         <h6><a href="{{route('app.home')}}" title="">Back To Homepage</a></h6>
                     </div>

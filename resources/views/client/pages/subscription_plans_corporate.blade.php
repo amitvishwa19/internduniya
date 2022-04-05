@@ -35,7 +35,7 @@
                 <div class="col-lg-12">
                     <div class="heading">
                         <h2>Buy Our Plans And Packeges</h2>
-                        <span>One of our jobs has some kind of flexibility option - such as telecommuting, a part-time schedule or a flexible or flextime schedule.</span>
+                        <!-- <span>One of our jobs has some kind of flexibility option - such as telecommuting, a part-time schedule or a flexible or flextime schedule.</span> -->
                     </div><!-- Heading -->
                     <div class="plans-sec">
                         <div class="row">
