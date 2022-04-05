@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Database\Seeders\PostSeeder;
+use Database\Seeders\CategorySeeder;
 use Database\Seeders\RolesPermissionsSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,7 +21,7 @@ class DatabaseSeeder extends Seeder
             RolesPermissionsSeeder::class,
             UserSeeder::class,
             SettingSeeder::class,
-            PostSeeder::class,
+            CategorySeeder::class,
             //ClassroomSeeder::class,
             //ChapterSeeder::class,
             //QuizSeeder::class,

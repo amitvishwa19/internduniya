@@ -11942,3 +11942,13 @@ header.style4 .account-btns > li a,
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
 }
+
+.footer {
+    position: fixed;
+    
+   
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}

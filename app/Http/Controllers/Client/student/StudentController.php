@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client\student;
 
+use App\Models\Post;
 use App\Models\User;
 use App\Models\Skill;
 use App\Models\Resume;
@@ -486,9 +487,16 @@ class StudentController extends Controller
     }
 
 
+    public function subscription(){
 
+        $student_plans = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'student-plans');
+        })->get();
 
+        return view('client.pages.student.subscription')->with('student_plans',$student_plans);
 
+    }
 
 
     public function password_management(){

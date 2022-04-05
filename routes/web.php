@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\ServerController;
 use App\Http\Controllers\Admin\ChapterController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\InquiryController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SandboxController;
@@ -35,8 +36,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ErrorLogController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\ClassroomController;
-use App\Http\Controllers\Admin\CorporateController;
 
+use App\Http\Controllers\Admin\CorporateController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IntenshipController;
 use App\Http\Controllers\Admin\AutoDeployController;
@@ -68,12 +69,12 @@ Route::get('/terms', [ClientController::class, 'terms'])->name('app.terms');
 Route::get('/privacy', [ClientController::class, 'privacy'])->name('app.privacy');
 
 //Buy Plans
-Route::get('/subscription/{type}', [ClientController::class, 'subscription_plans'])->name('app.subscription');
+Route::get('/subscription', [ClientController::class, 'subscription_plans'])->name('app.subscriptions');
 
 //Razoropay Payment Controller
 Route::get('/subscription/payment', [RazorpayPaymentController::class, 'index']);
 Route::post('/subscription/payment', [RazorpayPaymentController::class, 'store'])->name('razorpay.subscription.payment');
-
+Route::post('/subscription/payment/success', [RazorpayPaymentController::class, 'payment_success'])->name('razorpay.subscription.payment.success');
 
 Route::get('/auth/verify',[RegisterController::class,'verifyUser'])->name('app.auth.verify');
 Route::get('/getlocation',[CompanyController::class,'getlocation'])->name('generate.location');
@@ -125,7 +126,7 @@ Route::group(['middleware'=>['auth','student'],'prefix'=>'student'],function(){
     Route::get('/internships/shortlisted', [StudentController::class, 'internships_shortlisted'])->name('student.internships.shortlisted');
     Route::get('/internships/applied', [StudentController::class, 'internships_applied'])->name('student.internships.applied');
 
-    Route::get('/cover_letter', [StudentController::class, 'cover_letter'])->name('student.coverletter');
+    Route::get('/subscription', [StudentController::class, 'subscription'])->name('student.subscription');
 
     Route::get('/password_management', [StudentController::class, 'password_management'])->name('student.password.management');
     Route::post('/password_management/update', [StudentController::class, 'password_update'])->name('student.password.update');
@@ -148,9 +149,11 @@ Route::group(['middleware'=>['auth', 'corporate'],'prefix'=>'corporate'],functio
     Route::get('/internship/show/{id}', [CompanyController::class, 'internship_view'])->name('company.internship.view');
     Route::get('/internship/edit/{id}', [CompanyController::class, 'internship_edit'])->name('company.internship.edit');
     Route::put('/internship/{id}/update', [CompanyController::class, 'internship_update'])->name('company.internship.update');
+    
 
-    Route::get('/internship/new', [CompanyController::class, 'internship_new'])->name('company.internship.new')->middleware('subscribed');
-    Route::post('/internship/new/add', [CompanyController::class, 'internship_new_add'])->name('company.internship.new.add')->middleware('subscribed');
+
+    Route::get('/internship/new', [CompanyController::class, 'internship_new'])->name('company.internship.new')->middleware('profile','subscribed');
+    Route::post('/internship/new/add', [CompanyController::class, 'internship_new_add'])->name('company.internship.new.add');
     Route::get('/internship/delete/{id}', [CompanyController::class, 'internship_delete'])->name('company.internship.delete');
 
     Route::get('/internship/{id}/applications', [CompanyController::class, 'internship_applications'])->name('company.internship.applications');
@@ -160,6 +163,8 @@ Route::group(['middleware'=>['auth', 'corporate'],'prefix'=>'corporate'],functio
     Route::get('/resumes', [CompanyController::class, 'resumes'])->name('company.resumes');
     Route::get('/password_management', [CompanyController::class, 'password_management'])->name('company.password.management');
     Route::post('/password_management/update', [CompanyController::class, 'password_update'])->name('company.password.update');
+
+    Route::get('/subscription', [CompanyController::class, 'subscription'])->name('company.subscription');
 
 });
 
@@ -259,6 +264,7 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function(){
     //Corporate
     Route::resource('/corporate',CorporateController::class);
     Route::resource('/internship',IntenshipController::class);
+    Route::resource('/payment',PaymentController::class);
 
 });
 

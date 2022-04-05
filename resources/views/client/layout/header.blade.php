@@ -4,12 +4,13 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>InternDuniya</title>
+	<title>InternDuniya | @yield('title')</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="CreativeLayers">
 	<link rel="shortcut icon" href="{{setting('app_fevicon')}}">
+	<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="{{asset('public/client/css/bootstrap-grid.css')}}" />
@@ -27,6 +28,6 @@
 
 
 
-<div class="theme-layout" id="scrollup">
+<div class="theme-layout" id="scrollup" style="min-height: 100vh;">
 	
     @include('client.partials.menu')

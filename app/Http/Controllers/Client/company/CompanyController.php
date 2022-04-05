@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client\company;
 
+use App\Models\Post;
 use App\Models\User;
 use GuzzleHttp\Client;
 use App\Models\Category;
@@ -75,6 +76,7 @@ class CompanyController extends Controller
         $user = User::findOrFail(auth()->user()->id);
         $user->firstName = $request->firstName;
         $user->lastName = $request->lastName;
+        $user->profile = true;
         $user->save();
 
         $profile->title = $request->title;
@@ -137,6 +139,17 @@ class CompanyController extends Controller
     }
 
     public function internship_new(){
+
+        $corporate = auth()->user()->corporate; 
+        // if($resume->firstname == null || $resume->lastname == null || $resume->email == null || $resume->mobile == null){
+        //     return redirect()->back()
+        //     ->with([
+        //         'message'    =>'Dear candidate please complete your profile to apply for this Internship',
+        //         'alert-type' => 'alert-danger',
+        //     ]);
+        // }
+
+
 
         $internship_category = Category::where('slug','internship-categories')->first();
         $categories = Category::where('parent_id', $internship_category->id )->orderby('created_at','desc')->get();
@@ -314,5 +327,15 @@ class CompanyController extends Controller
         $response = $client->get('http://postalpincode.in/api/pincode/'.$request->pincode);
 
         return $response;
+    }
+
+    public function subscription(){
+
+        $corporate_plans = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'corporate-plans');
+        })->get();
+        
+        return view('client.pages.company.subscription')->with('corporate_plans',$corporate_plans);
     }
 }

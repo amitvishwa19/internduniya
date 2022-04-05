@@ -17,12 +17,12 @@
     <div class="manage-jobs-sec addscroll">
 
 		@if (session('message'))
-		<div class="alert alert-primary alert-dismissible fade show  m-4" role="alert">
-			<strong></strong> {{ session('message') }}
-			<button type="button" class="close alert_close_button" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
+			<div class="alert alert-primary alert-dismissible fade show  m-4" role="alert">
+				<strong></strong> {{ session('message') }}
+				<button type="button" class="close alert_close_button" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
 		@endif
 
 		@if($internships->count() > 0)

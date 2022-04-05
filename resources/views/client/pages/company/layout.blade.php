@@ -36,6 +36,7 @@
 								<li><a href="{{route('company.profile')}}" title=""><i class="la la-file-text"></i>Profile</a></li>
 								<li><a href="{{route('company.internship')}}" title=""><i class="la la-briefcase"></i>Internship</a></li>
 								<li><a href="{{route('company.resumes')}}" title=""><i class="la la-paper-plane"></i>Resumes</a></li>
+								<li><a href="{{route('company.subscription')}}" title=""><i class="fa fa-bookmark"></i>Subscriptions</a></li>
 								<li><a href="{{route('company.password.management')}}" title=""><i class="la la-lock"></i>Change Password</a></li>
 								<li>
                                     <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout').submit();"><i class="la la-unlink"></i>Logout</a>

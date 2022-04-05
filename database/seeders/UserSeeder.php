@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
         $superAdmin->assignRole('digilearn');
 
 
-        User::factory(7)->create();
+        User::factory(3)->create();
 
     }
 }

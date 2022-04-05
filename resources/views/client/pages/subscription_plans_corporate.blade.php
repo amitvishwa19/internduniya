@@ -52,24 +52,8 @@
                                         <li>Job displayed for 20 days</li>
                                         <li>Premium Support 24/7</li>
                                     </ul>
-                                    <!-- <a href="javascript:void(0)" title="" id="plan_1" class="buy_button" data-amount="200">BUY NOW</a> -->
-                                    <div>
-                                        <form action="{{route('razorpay.subscription.payment')}}" method="post" style="margin: 0 auto">
-                                            @csrf
-                                            <button class="buyForm buybtn">Buy Now</button>
-                                            <script src="https://checkout.razorpay.com/v1/checkout.js"
-                                                    data-key="{{ env('RAZORPAY_KEY') }}"
-                                                    data-amount="1000"
-                                                    data-buttontext="Pay 10 INR"
-                                                    data-name="InternDuniya"
-                                                    data-description="Rozerpay"
-                                                    data-image="https://internduniya.com/public//storage/uploads/images/1648727497_internduniya_3.png"
-                                                    data-prefill.name="name"
-                                                    data-prefill.email="email"
-                                                    data-theme.color="#37254">
-                                            </script>
-                                        </form>
-                                    </div>
+                                    <a href="javascript:void(0)" title="" id="plan_1" class="buy_button" data-amount="200">BUY NOW</a>
+                                   
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -85,11 +69,7 @@
                                         <li>Job displayed for 30 days</li>
                                         <li>Premium Support 24/7</li>
                                     </ul>
-                                    <div>
-                                        <form action="" style="margin: 0 auto">
-                                            <button class="buyForm buybtn dark">Buy Now</button>
-                                        </form>
-                                    </div>
+                                    <a href="#" title="">BUY NOW</a>
                                     
                                 </div>
                             </div>
@@ -106,11 +86,7 @@
                                         <li>Job displayed for 80 days</li>
                                         <li>Premium Support 24/7</li>
                                     </ul>
-                                    <div>
-                                        <form action="" style="margin: 0 auto">
-                                            <button class="buyForm buybtn ">Buy Now</button>
-                                        </form>
-                                    </div>
+                                    <a href="#" title="">BUY NOW</a>
                                 </div>
                             </div>
                         </div>
@@ -133,16 +109,30 @@
 
 @section('javascript')
 
-
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   	<script>
   		$(function(){
          'use strict'
+        
+        $('.buy_button').on("click",function(e){
+            
+            var options = {
+                "key":"{{env('RAZORPAY_KEY')}}",
+                "amount": ($(this).attr("data-amount")*100),
+                "name":"{{env('APP_NAME')}}",
+                "description": "Internduniya Subscription payment",
+                "image": "//www.tutsmake.com/wp-content/uploads/2018/12/cropped-favicon-1024-1-180x180.png",
+                "handler": function (response){
+                    console.log(response);
+                },
+               
+            };
+            
+            var rzp1 = new Razorpay(options);   
+            rzp1.open();
+            e.preventDefault();
 
-        $('.buy_button').on("click",function(){
-            //var usersid =  $(this).data("id");
-            //var username = $(this).data("username");
-
-            alert($(this).data("amount"));
+            //alert(options['amount']);
         })
 
 

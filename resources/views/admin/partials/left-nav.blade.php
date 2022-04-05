@@ -59,6 +59,12 @@
                     <i data-feather="zap" class="align-self-center menu-icon"></i><span>Internships</span>
                 </a>
             </li>
+
+            <li>
+                <a href="{{route('payment.index')}}">
+                    <i data-feather="dollar-sign" class="align-self-center menu-icon"></i><span>Payments</span>
+                </a>
+            </li>
             
 
 

@@ -108,9 +108,9 @@
                         <a href="{{route('app.user.dashboard')}}" title=""></i>Dashboard</a>
                     </li>
 
-                    <!-- <li class="">
-                        <a title=""></i>{{auth()->user()->firstName}}, {{auth()->user()->lastName}}</a>
-                    </li> -->
+                    <li class="">
+                        <a title=""></i>{{auth()->user()->firstName ? auth()->user()->firstName : ""}} {{auth()->user()->lastName ? auth()->user()->lastName : ""}}</a>
+                    </li>
 
                     <li class="">
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout').submit();"><i class="la la-external-link-square"></i> Logout</a>
@@ -130,6 +130,10 @@
 
                     <li class="">
                         <a href="{{route('app.blogs')}}" title="">News</a>
+                    </li>
+
+                    <li class="">
+                        <a href="{{route('app.subscriptions')}}" title="">Pricing</a>
                     </li>
                 </ul>
             </nav><!-- Menus -->

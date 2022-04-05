@@ -37,7 +37,7 @@
 								<li><a href="{{route('student.resume')}}" title=""><i class="la la-briefcase"></i>My Resume</a></li>
 								<li><a href="{{route('student.internships.shortlisted')}}" title=""><i class="la la-money"></i>Shorlisted Internships</a></li>
 								<li><a href="{{route('student.internships.applied')}}" title=""><i class="la la-paper-plane"></i>Applied Interships</a></li>
-								<!-- <li><a href="{{route('student.coverletter')}}" title=""><i class="la la-file-text"></i>Cover Letter</a></li> -->
+								<li><a href="{{route('student.subscription')}}" title=""><i class="la la-file-text"></i>Subscriptions</a></li>
 								<li><a href="{{route('student.password.management')}}" title=""><i class="la la-flash"></i>Change Password</a></li>
 								<li>
                                     <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout').submit();"><i class="la la-unlink"></i>Logout</a>

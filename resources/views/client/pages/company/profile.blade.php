@@ -41,52 +41,52 @@
                         <div class="col-lg-6">
                             <span class="pf-title">User First Name*</span>
                             <div class="pf-field">
-                                <input type="text" name="firstName" value="{{$user->firstName}}">
+                                <input type="text" name="firstName" value="{{$user->firstName}}{{old('firstName')}}">
                             </div>
                         </div>
 
                         <div class="col-lg-6">
                             <span class="pf-title">User Last Name*</span>
                             <div class="pf-field">
-                                <input type="text" name="lastName" value="{{$user->lastName}}">
+                                <input type="text" name="lastName" value="{{$user->lastName}}{{old('lastName')}}">
                             </div>
                         </div>
 
                         <div class="col-lg-12">
                             <span class="pf-title">Company Name*</span>
                             <div class="pf-field">
-                                <input type="text" name="title" value="{{$user->corporate->title}}">
+                                <input type="text" name="title" value="{{$user->corporate->title ? $user->corporate->title : old('title')}}">
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <span class="pf-title">Company Description*</span>
                             <div class="pf-field">
-                                <textarea name="description" rows="2">{{$user->corporate->description}}</textarea>
+                                <textarea name="description" rows="2">{{$user->corporate->description ? $user->corporate->description : old('description')}}</textarea>
                                 
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <span class="pf-title">Company Website</span>
                             <div class="pf-field">
-                                <input type="text" name="website" value="{{$user->corporate->website}}">
+                                <input type="text" name="website" value="{{$user->corporate->website ? $user->corporate->website : old('website')}}">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <span class="pf-title">Company Contact No.*</span>
                             <div class="pf-field">
-                                <input type="text" name="contact" value="{{$user->corporate->contact}}">
+                                <input type="text" name="contact" value="{{$user->corporate->contact ? $user->corporate->contact : old('contact')}}">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <span class="pf-title">Company contact Email*</span>
                             <div class="pf-field">
-                                <input type="text" name="email" value="{{$user->corporate->email}}">
+                                <input type="text" name="email" value="{{$user->corporate->email ? $user->corporate->email : old('email')}}">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <span class="pf-title">Total Employees</span>
                             <div class="pf-field">
-                                <input type="number" name="employees" value="{{$user->corporate->employees}}">
+                                <input type="number" name="employees" value="{{$user->corporate->employees ? $user->corporate->employees : old('employees')}}">
                             </div>
                         </div>
                         

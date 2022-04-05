@@ -237,18 +237,30 @@ class ClientController extends Controller
                                 ->paginate(10);
         }
 
+        if(!$search_title && !$search_city){
+            $internships = Intenship::orderby('created_at','desc')
+                                ->where('approved',true)
+                                ->paginate(10);
+        }
+
         //$internships = Intenship::where('title', 'like', "%$search_title%")->paginate(10);
         //dd($internships);
 
         return view('client.pages.internships_search_result')->with('internships',$internships)->with('cities',$cities);
     }
 
-    public function subscription_plans($type){
+    public function subscription_plans(){
+        $corporate_plans = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'corporate-plans');
+        })->get();
 
-        if($type == 'student'){
-            return view('client.pages.subscription_plans_student');
-        }else{
-            return view('client.pages.subscription_plans_corporate');
-        }
+        $student_plans = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'student-plans');
+        })->get();
+
+        
+        return view('client.pages.subscription_plans')->with('corporate_plans',$corporate_plans)->with('student_plans',$student_plans);
     }
 }
