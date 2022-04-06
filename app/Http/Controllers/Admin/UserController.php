@@ -163,17 +163,25 @@ class UserController extends Controller
         $user->lastName = $request->lastName;
         //$user->email = $request->email;
         $user->status = $request->status;
-        $user->corporate_id = $request->corporate_type;
-        $user->role = $request->role;
+        //$user->corporate_id = $request->corporate_type;
+        //$user->role = $request->role;
         if($request->admin){
             $user->type = 'admin';
         }else{
             $user->type = 'user';
         }
 
+        //subscriptions
+        if($request->subscribed){$user->subscribed = true;}else{$user->subscribed = false;}
+        $user->subscription_date = $request->subscription_date;
+        $user->renew_date = $request->renew_date;
+        $user->plan = $request->plan;
+        $user->action_count = $request->action_count;
+        $user->amount = $request->amount;
+
         $user->update();
 
-        $user->syncRoles($request->roles);
+        //$user->syncRoles($request->roles);
 
         //$user->corporate()->sync($request->corporate_type);
 

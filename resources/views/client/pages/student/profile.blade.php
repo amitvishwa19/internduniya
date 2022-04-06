@@ -15,12 +15,25 @@
                     @csrf
 
                     @if (session('message'))
-                    <div class="alert alert-primary alert-dismissible fade show mt-2" role="alert">
-                        <strong>Wola ! </strong> {{ session('message') }}
-                        <button type="button" class="close alert_close_button" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                        <div class="alert alert-primary alert-dismissible fade show mt-2" role="alert">
+                            <strong>Wola ! </strong> {{ session('message') }}
+                            <button type="button" class="close alert_close_button" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+
+                    @if(count($errors))
+                        <div class="validation_error_list alert alert-info mt-2">
+                            <strong>Whoops!</strong> There were some problems with your input.
+                            <br/>
+
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li><span class="mt-2">*</span> {{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     @endif
 
                     <div class="row">

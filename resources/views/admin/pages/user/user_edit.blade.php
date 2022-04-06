@@ -66,16 +66,53 @@
                 </select>
             </div>
 
-            <div class="form-group col-md-6">
+            <div class=" check-success  mt-2 col-md-12 mb-2">
+                <label><b>Subscribed</b></label><br>
+                <input type="checkbox"  value="1" id="checkbox2" name="subscribed" {{$user->subscribed == true ? "checked" : ""}}>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label><b>Subscription Date</b></label>
+                <input type="date" class="form-control" name="subscription_date" value="{{$user->subscription_date}}{{old('subscription_date')}}">
+                <div class="error">{{$errors->first('subscription_date')}}</div>
+            </div>
+
+
+            <div class="form-group col-md-2">
+                <label><b>Renew Date</b></label>
+                <input type="date" class="form-control" name="renew_date" value="{{$user->renew_date}}{{old('renew_date')}}">
+                <div class="error">{{$errors->first('renew_date')}}</div>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label><b>Subscription Plan</b></label>
+                <input type="text" class="form-control" name="plan" value="{{$user->plan}}{{old('plan')}}">
+                <div class="error">{{$errors->first('plan')}}</div>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label><b>Impression Count</b></label>
+                <input type="text" class="form-control" name="action_count" value="{{$user->action_count}}{{old('action_count')}}">
+                <div class="error">{{$errors->first('action_count')}}</div>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label><b>Plan Payment</b></label>
+                <input type="text" class="form-control" name="amount" value="{{$user->amount}}{{old('amount')}}">
+                <div class="error">{{$errors->first('amount')}}</div>
+            </div>
+
+
+            <!-- <div class="form-group col-md-6">
                 <label><b>Assign Corporate</b></label>
                 <select name="corporate_type" id="" class="form-control">
                     @foreach($corporates as $corporate)
                     <option value="{{$corporate->id}}">{{$corporate->title}}</option>
                     @endforeach
                 </select>
-            </div>
+            </div> -->
 
-            <div class="form-group col-md-12">
+            <!-- <div class="form-group col-md-12">
                 <label><b>Roles</b></label>
                 <div class="row pl-2 pr-2">
                     @foreach($roles as $role)
@@ -91,7 +128,7 @@
                         </div>
                     @endforeach
                 </div>
-            </div>
+            </div> -->
 
             <div class=" radio-success form-group col-md-12">
                 <label><b>Status</b></label><br>

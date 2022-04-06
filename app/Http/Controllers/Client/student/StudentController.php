@@ -38,6 +38,24 @@ class StudentController extends Controller
 
     public function profile_update(Request $request){
 
+        $this->validate($request,[
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'mobile' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'address' => 'required',
+        ],[
+            'firstname.required' => ' First name of user is required',
+            'lastname.required' => 'Last name of user is required',
+            'email.required' => 'Please specify email',
+            'mobile.required' => 'Please specify mobile',
+            'city.required' => 'Please specify city',
+            'state.required' => 'Please specify state',
+            'address.required' => 'Please specify address',
+        ]);
+
         $resume = Resume::updateOrCreate([
             'user_id'   => auth()->user()->id,
         ],[
@@ -53,7 +71,10 @@ class StudentController extends Controller
         ]); 
 
         $user = User::findOrFail(auth()->user()->id);
+        $user->firstName = $request->firstName;
+        $user->lastName = $request->lastName;
         $user->resume_id = $resume->id;
+        $user->profile = true;
         $user->save();
 
         //dd($request->all());

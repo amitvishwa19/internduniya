@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Exception;
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Resume;
 use Illuminate\Http\Request;
@@ -56,10 +57,18 @@ class GoogleLogin extends Controller
 
                 $user = User::findOrFail($newUser->id);
                 $user->resume_id = $resume->id;
+
+                //Free Subscription Credits
+                if(setting('student_credits') > 0){
+                    $user->subscribed = true;
+                    $user->subscription_date = Carbon::now();
+                    $user->renew_date = Carbon::now()->addDays(30);;
+                    $user->plan = 'Onboarding';
+                    $user->action_count = setting('student_credits'); 
+                }
                 $user->save();
-    
+
                 Auth::login($newUser);
-     
                 return redirect('/');
             }
     

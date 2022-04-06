@@ -20,7 +20,7 @@ class SettingController extends Controller
 
     public function index(Request $request)
     {
-        \AppSetting::get('app_name');
+        //\AppSetting::get('app_name');
 
         //dd($settings->get('name'));
         //dd($settings->all());
@@ -50,6 +50,10 @@ class SettingController extends Controller
         
         setting('app_name',$request->app_name);
         setting('app_description',$request->app_description);
+
+        //dd($request->all());
+        setting('student_credits',$request->student_credits);
+        setting('corporate_credits',$request->corporate_credits);
 
         if($request->file('app_icon')){
             $auth_image_url = uploadImage($request->file('app_icon'));

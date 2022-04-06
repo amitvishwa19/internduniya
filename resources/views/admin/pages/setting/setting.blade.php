@@ -32,7 +32,7 @@
 
                         <div class="col-auto align-self-center">
                             <!-- <a href="#post_display" class="btn btn-info waves-effect waves-light btn-sm" data-toggle="modal" >Posts Grid</a> -->
-                            <button class="btn btn-info waves-effect waves-light btn-sm">Save Settings</button>
+                            <!-- <button class="btn btn-info waves-effect waves-light btn-sm">Save Settings</button> -->
                         </div><!--end col-->
                     </div><!--end row-->
                 </div><!--end page-title-box-->

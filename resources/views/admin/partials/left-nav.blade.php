@@ -128,7 +128,7 @@
 
         </ul>
 
-        <div class="update-msg text-center">
+        <div class="update-msg text-center bottom-brand">
             <a href="javascript: void(0);" class="btn btn-outline-warning btn-sm"> &copy; 2021 Devlomatix Solutions Version: {{config('app.version')}}</a>
         </div>
     </div>

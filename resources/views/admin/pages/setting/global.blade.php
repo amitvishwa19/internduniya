@@ -18,11 +18,22 @@
             </div>
 
             <div class="form-group">
+                <label for="exampleInputPassword1"><b>Student Free Credit (Number)</b></label>
+                <input type="text" class="form-control col-md-6" min="0" name="student_credits" value="{{setting('student_credits')}}">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1"><b>Corporate Free Credit</b></label>
+                <input type="text" class="form-control col-md-6" name="corporate_credits" value="{{setting('corporate_credits')}}">
+            </div>
+
+
+            <div class="form-group">
                 <label for="exampleInputPassword1"><b>App Icon</b></label><br>
                 
                 @if(setting('app_icon'))
-                <div class="media mb-2">
-                    <img src="{{setting('app_icon')}}" height="60" class="mr-3 align-self-center rounded" alt="...">
+                <div class="media mb-4">
+                    <img src="{{setting('app_icon')}}" class="mr-3 align-self-center rounded" alt="..." height="30">
                    
                 </div>
                 @endif
@@ -54,7 +65,7 @@
            
 
 
-            <button type="submit" class="btn btn-info waves-effect waves-light btn-sm">Save</button>
+            <button type="submit" class="btn btn-info waves-effect waves-light btn-sm">Save Settings</button>
         </form>
 
     </div><!--end card-body-->
