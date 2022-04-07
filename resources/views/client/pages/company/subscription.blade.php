@@ -33,7 +33,7 @@
 														<li>{{$tag->name}}</li>
 														@endforeach
 													</ul>
-													<a href="javascript:void(0)" title="" id="plan_1" class="buy_button" data-amount="{{$plan->description}}">BUY NOW</a>
+													<a href="javascript:void(0)" title="" data-plan="{{$plan->title}}" class="buy_button" data-amount="{{$plan->description}}">BUY NOW</a>
 												</div>
 											</div>
 										@endforeach
@@ -76,18 +76,42 @@
   	<script>
   		$(function(){
          'use strict'
+
+		 $.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
         
         $('.buy_button').on("click",function(e){
-            
+            var amnt = $(this).attr("data-amount")*100;
+			var plan = $(this).attr("data-plan");
+
             var options = {
                 "key":"{{env('RAZORPAY_KEY')}}",
                 "amount": ($(this).attr("data-amount")*100),
                 "name":"{{env('APP_NAME')}}",
                 "description": "Internduniya Subscription payment",
-                "image": "https//www.tutsmake.com/wp-content/uploads/2018/12/cropped-favicon-1024-1-180x180.png",
+                "image": "{{setting('app_icon')}}",
                 "handler": function (response){
-                    console.log(response);
+                    $.ajax({
+							type:'post',
+							url:"{{ route('razorpay.subscription.payment.success') }}",
+							data:{payment_id:response.razorpay_payment_id,amount:amnt,plan:plan},
+							success:function(data){
+								//console.log(data);
+								location.reload();
+							},
+							error: function(data){
+								console.log(data);
+							}
+						});
+
                 },
+				"prefill": {
+					"contact": '9712340450',
+					"email":   'amitvishwa@gmail.com',
+				},
                
             };
             

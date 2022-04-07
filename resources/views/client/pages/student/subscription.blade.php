@@ -89,7 +89,7 @@
 					"amount": amnt,
 					"name":"{{env('APP_NAME')}}",
 					"description": "Internduniya Subscription payment",
-					"image": "//www.tutsmake.com/wp-content/uploads/2018/12/cropped-favicon-1024-1-180x180.png",
+					"image":  "{{setting('app_icon')}}",
 					"handler": function (response){
 						//console.log(response);
 
