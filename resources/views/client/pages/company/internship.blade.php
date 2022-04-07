@@ -48,7 +48,7 @@
 						</div>
 					</td>
 					<td>
-						<span class="applied-field ml-4">{{$internship->applied_users->count()}}</span>
+						<span class="ml-5"><a href="{{route('company.internship.applications',$internship->id)}}">{{ $internship->applied_users->count() }}</a></span>
 					</td>
 					<td>
 						<span>{{\Carbon\Carbon::parse($internship->start_date)->isoFormat('MMM Do YYYY')}}</span><br>

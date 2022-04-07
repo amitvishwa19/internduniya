@@ -51,8 +51,8 @@ class CompanyController extends Controller
         //dd($request->all());
 
         $this->validate($request,[
-            'firstName' => 'required|min:5|max:255',
-            'lastName' => 'required|min:5|max:255',
+            'firstName' => 'required|max:255',
+            'lastName' => 'required|max:255',
             'title' => 'required|max:255',
             'description' => 'required',
             'contact' => 'required',

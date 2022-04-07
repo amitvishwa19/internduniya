@@ -140,8 +140,8 @@
                         <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;" name="type">
                             <option value="">-Select Opening Type-</option>
                             <option value="wfh">Work From Home</option>
-                            <option value="regular">Regular</option>
-                            
+                            <option value="fulltime">Full-time</option>
+                            <option value="parttime">Part-time</option>
                         </select>
                     
                     </div>
