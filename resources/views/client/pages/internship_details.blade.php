@@ -101,7 +101,20 @@
 			 					<p><i class="la la-unlink"></i> {{$internship->corporate->website}}</p>
 			 					
 			 				</div>
-			 				<a href="{{route('app.student.apply.internship',$internship->id)}}" title="" class="apply-job-btn"><i class="la la-paper-plane"></i>Apply Now</a>
+
+							@if(Auth::user())
+								@if(auth()->user()->role != 'corporate')
+								<a href="{{route('app.student.apply.internship',$internship->id)}}" title="" class="apply-job-btn">
+									<i class="la la-paper-plane"></i>Apply Now
+								</a>
+								@endif
+
+							@else
+							<a href="{{route('app.student.apply.internship',$internship->id)}}" title="" class="apply-job-btn">
+								 <i class="la la-paper-plane"></i>Apply Now
+							</a>
+							@endif
+
 			 				<!-- <a href="#" title="" class="viewall-jobs">View all Jobs</a> -->
 			 			</div><!-- Job Head -->
 				 	</div>

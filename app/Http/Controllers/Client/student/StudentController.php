@@ -71,8 +71,8 @@ class StudentController extends Controller
         ]); 
 
         $user = User::findOrFail(auth()->user()->id);
-        $user->firstName = $request->firstName;
-        $user->lastName = $request->lastName;
+        $user->firstName = $request->firstname;
+        $user->lastName = $request->lastname;
         $user->resume_id = $resume->id;
         $user->profile = true;
         $user->save();

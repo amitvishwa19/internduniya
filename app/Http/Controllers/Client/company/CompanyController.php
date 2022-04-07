@@ -210,6 +210,17 @@ class CompanyController extends Controller
         $internship->status = $request->status;
         $internship->save();
 
+        if(auth()->user()->action_count > 0){
+            $user =  User::findOrFail(auth()->user()->id);
+            $user->action_count -= 1;
+            $user->save();
+
+            if(auth()->user()->action_count -1 == 0 ){
+               $user->subscribed = false; 
+            }
+            $user->save();
+        }
+
         $internship->categories()->sync($request->categories);
 
         return redirect()->route('company.internship')
@@ -281,10 +292,16 @@ class CompanyController extends Controller
     }
 
     public function resumes(){
+        $internships = auth()->user()->corporate->internships;
+        //dd($internships);
+        // $applications = null;
+
+        // foreach($internships as $internship){
+        //     $applications += $internship->applied_users->count();
+        // }
 
 
-
-        return view('client.pages.company.resumes');
+        return view('client.pages.company.resumes')->with('internships',$internships);
     }
 
     public function password_management(){

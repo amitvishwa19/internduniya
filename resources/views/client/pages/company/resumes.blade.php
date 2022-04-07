@@ -9,6 +9,17 @@
 		<div class="manage-jobs-sec addscroll">
 			<h3>Resumes</h3>
 			
+
+            @foreach($internships as $internship)
+
+            @foreach($internship->applied_users as $user)
+                {{$user->firstName}}
+            @endforeach
+            
+
+
+            @endforeach
+            
             <div class="emply-resume-list">
                 <div class="emply-resume-thumb">
                     <img src="{{asset('public/client/images/resource/er1.jpg')}}" alt="">
@@ -34,7 +45,8 @@
                     <a href="#" title=""><i class="la la-trash-o"></i></a>
                 </div>
             </div>
-          
+
+            
 		</div>
 	</div>
 </div>
