@@ -41,13 +41,13 @@
                         <div class="col-lg-6">
                             <span class="pf-title">Start Date</span>
                             <div class="pf-field">
-                                <input type="date" name="start_date" value="{{$experience->start_date}}">
+                                <input type="date" name="start_date" value="{{$experience->start_date}}" placeholder="dd-mm-yyyy">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <span class="pf-title">End Date</span>
                             <div class="pf-field">
-                                <input type="date" name="end_date" value="{{$experience->end_date}}">
+                                <input type="date" name="end_date" value="{{$experience->end_date}}" placeholder="dd-mm-yyyy">
                             </div>
                         </div>
                         <div class="col-lg-12">

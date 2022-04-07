@@ -53,13 +53,13 @@
                         <div class="col-lg-6">
                             <span class="pf-title">Start Date*</span>
                             <div class="pf-field">
-                                <input type="date" name="start_date" value="{{old('start_date')}}">
+                                <input type="date" name="start_date" value="{{old('start_date')}}" placeholder="dd-mm-yyyy">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <span class="pf-title">End Date*</span>
                             <div class="pf-field">
-                                <input type="date" name="end_date" value="{{old('end_date')}}">
+                                <input type="date" name="end_date" value="{{old('end_date')}}" placeholder="dd-mm-yyyy">
                             </div>
                         </div>
                         <div class="col-lg-12">

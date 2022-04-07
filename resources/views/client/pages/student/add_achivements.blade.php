@@ -47,13 +47,13 @@
                         <div class="col-lg-6">
                             <span class="pf-title">From Date*</span>
                             <div class="pf-field">
-                                <input type="date" name="start_date">
+                                <input type="date" name="start_date" placeholder="dd-mm-yyyy">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <span class="pf-title">To Date*</span>
                             <div class="pf-field">
-                                <input type="date" name="end_date">
+                                <input type="date" name="end_date" placeholder="dd-mm-yyyy">
                             </div>
                         </div>
                         <div class="col-lg-12">
