@@ -83,7 +83,7 @@
 
                 @if(Auth::user())
                     @if(Auth::user()->role == 'student')
-                        <a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Get Internship</a>
+                        <a href="{{route('app.internships',['category'=>'all'])}}" title="" class="post-job-btn"><i class="la la-plus"></i>Get Internship</a>
                     @else
                         <a href="{{route('company.internship.new')}}" title="" class="post-job-btn"><i class="la la-plus"></i>Post Internship</a>
                     @endif
