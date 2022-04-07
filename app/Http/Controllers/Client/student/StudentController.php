@@ -118,7 +118,7 @@ class StudentController extends Controller
         $this->validate($request,[
             'title' => 'required|max:255',
             'type' => 'required|max:255',
-            'organization' => 'required|min:5|max:255',
+            'organization' => 'required|max:255',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after:start_date',
             
