@@ -27,7 +27,7 @@ class Subscribed
                     'alert-type' => 'alert-danger',
                 ]);
             }else{
-                return redirect()->route('company.subscription')
+                return redirect()->back()
                 ->with([
                     'subscribe-message'    =>'Dear Corporate you do not have any credit to post intenship, check for our Plans',
                     'alert-type' => 'alert-danger',

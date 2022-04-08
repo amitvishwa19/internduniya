@@ -27,8 +27,8 @@
 							<div class="link_widgets">
 								<div class="row">
 									<div class="col-lg-6">
-										<a href="{{route('app.privacy')}}" title="">Privacy & Seurty </a>
-										<a href="{{route('app.terms')}}" title="">Terms of Serice</a>
+										<a href="{{route('app.privacy')}}" title="">Privacy Policy </a>
+										<a href="{{route('app.terms')}}" title="">Terms of Service</a>
 										<!-- <a href="#" title="">Communications </a>
 										<a href="#" title="">Referral Terms </a>
 										<a href="#" title="">Lending Licnses </a>
@@ -37,32 +37,13 @@
 									<div class="col-lg-6">
 										<a href="#" title="">Support </a>
 										<a href="#" title="">How It Works </a>
-										<a href="#" title="">For Employers </a>
-										<a href="#" title="">Underwriting </a>
-										<a href="#" title="">Contact Us</a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-2 column">
-						<div class="widget">
-							<h3 class="footer-title">Find Internships</h3>
-							<div class="link_widgets">
-								<div class="row">
-									<div class="col-lg-12">
-										<a href="#" title="">US Jobs</a>	
-										<a href="#" title="">Canada Jobs</a>	
-										<a href="#" title="">UK Jobs</a>	
-										<a href="#" title="">Emplois en Fnce</a>	
-										<a href="#" title="">Jobs in Deuts</a>	
-										<a href="#" title="">Vacatures China</a>	
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-2 column">
+				
+					<div class="col-lg-4 column">
 						<div class="widget">
 							<div class="download_widget">
 								<a href="#" title=""><img src="{{asset('public/client/images/resource/dw1.png')}}" alt="" /></a>

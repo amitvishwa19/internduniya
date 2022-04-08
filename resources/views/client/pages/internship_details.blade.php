@@ -39,7 +39,7 @@
 
 				@if (session('subscribe-message'))
 				<div class="alert {{session('alert-type')}} alert-dismissible fade show mt-2 mb-5" role="alert">
-					{{ session('subscribe-message') }}. <span class="ml-1"><a href="{{route('student.subscription')}}">Subscribe Now</a></span>
+					{{ session('subscribe-message') }}. <span class="ml-1"><a href="{{route('student.subscription')}}">View Plans</a></span>
 					<button type="button" class="close alert_close_button" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>

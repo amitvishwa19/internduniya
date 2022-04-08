@@ -54,7 +54,7 @@
                                         <li>{{$tag->name}}</li>
                                         @endforeach
                                     </ul>
-                                    <a href="{{route('company.subscription')}}" >BUY NOW</a>
+                                    <a href="{{route('student.subscription')}}" >BUY NOW</a>
                                 </div>
                             </div>
                         @endforeach
