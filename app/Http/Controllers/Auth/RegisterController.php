@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Resume;
 use App\Models\Corporate;
@@ -100,6 +101,15 @@ class RegisterController extends Controller
         }else{
             $user->role = 'corporate';
         }
+
+        if(setting('student_credits') > 0){
+            $user->subscribed = true;
+            $user->subscription_date = Carbon::now();
+            $user->renew_date = Carbon::now()->addDays(30);;
+            $user->plan = 'Onboarding';
+            $user->action_count = setting('student_credits'); 
+        }
+        
         $user->save();
 
         if($request->type == 'student'){

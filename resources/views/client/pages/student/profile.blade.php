@@ -38,26 +38,26 @@
 
                     <div class="row">
                         <div class="col-lg-3">
-                            <span class="pf-title">First Name</span>
+                            <span class="pf-title">First Name*</span>
                             <div class="pf-field">
                                 <input type="text" name="firstname" value="{{ !$resume == null ? $resume->firstname : ""}}">
                             </div>
                         </div>
                         
                         <div class="col-lg-3">
-                            <span class="pf-title">Last Name</span>
+                            <span class="pf-title">Last Name*</span>
                             <div class="pf-field">
                                 <input type="text" name="lastname" value="{{ !$resume == null ? $resume->lastname : ""}}">
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <span class="pf-title">Email</span>
+                            <span class="pf-title">Email*</span>
                             <div class="pf-field">
                                 <input type="text" name="email" value="{{ !$resume == null ? $resume->email : ""}}">
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <span class="pf-title">Mobile</span>
+                            <span class="pf-title">Mobile*</span>
                             <div class="pf-field">
                                 <input type="text" name="mobile" value="{{ !$resume == null ? $resume->mobile : ""}}">
                             </div>
@@ -70,20 +70,20 @@
                         </div>
 
                         <div class="col-lg-3">
-                            <span class="pf-title">Postal Code</span>
+                            <span class="pf-title">Postal Code*</span>
                             <div class="pf-field">
                                 <input type="text" id="pincode" name="post_code" value="{{ !$resume == null ? $resume->post_code : ""}}">
                             </div>
                         </div>
 
                         <div class="col-lg-3">
-                            <span class="pf-title">City</span>
+                            <span class="pf-title">City*</span>
                             <div class="pf-field">
                                 <input type="text" id="city" name="city" value="{{ !$resume == null ? $resume->city : ""}}">
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <span class="pf-title">State</span>
+                            <span class="pf-title">State*</span>
                             <div class="pf-field">
                                 <input type="text" id="state" name="state" value="{{ !$resume == null ? $resume->state : ""}}">
                             </div>

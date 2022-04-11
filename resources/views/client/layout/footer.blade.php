@@ -28,7 +28,7 @@
 								<div class="row">
 									<div class="col-lg-6">
 										<a href="{{route('app.privacy')}}" title="">Privacy Policy </a>
-										<a href="{{route('app.terms')}}" title="">Terms of Service</a>
+										<a href="{{route('app.terms')}}" title="">Terms & Condition</a>
 										<!-- <a href="#" title="">Communications </a>
 										<a href="#" title="">Referral Terms </a>
 										<a href="#" title="">Lending Licnses </a>
