@@ -46,6 +46,8 @@
                                 <tr>
                                     <th style="width:20%">Title</th>
                                     <th style="width:40%">Description</th>
+                                    <th style="width:5%">Contact Number</th>
+                                    <th style="width:5%">Email</th>
                                     <th style="width:5%">Type</th>
                                     <th style="width:5%">Status</th>
                                     <th style="width:5%">Actions</th>
@@ -91,6 +93,8 @@ $(function(){
                 columns:[
                     { data: 'companymeta', name: 'companymeta'},   
                     { data: 'description', name: 'description'},
+                    { data: 'contact', name: 'contact'},
+                    { data: 'email', name: 'email'},
                     { data: 'type', name: 'type'},
                     { data: 'status', name: 'status'},        
                     { data: 'action', name: 'action' },
