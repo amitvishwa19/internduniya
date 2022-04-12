@@ -34,6 +34,37 @@
         </div><!--end row-->
 
     </div>
+
+    <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <div class="card">
+                    <div class="card-body table-responsive">
+                        <div class="">
+                            <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                        <th>Contact</th>
+                                        <th>Website</th>
+                                        <th>Address</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Pin Code</th>
+                                    </tr>
+                                </thead>
+
+
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end row-->
 @endsection
 
 
@@ -53,18 +84,22 @@
             'use strict'
 
             //Datatable
-            // $('#datatable').DataTable({
-            //     processing: true,
-            //     serverSide: true,
-            //     ajax: '{!! route('post.index') !!}',
-            //     columns:[
-            //         { data: 'postdetails', name: 'postdetails'},
-            //         { data: 'category', name: 'category'},
-            //         { data: 'status', name: 'status'},
-            //         { data: 'created_at', name: 'created_at' },
-            //         { data: 'action', name: 'action' },
-            //     ]
-            // });
+            $('#datatable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{!! route('resume.index') !!}',
+                columns:[
+                    { data: 'firstname', name: 'firstname'},
+                    { data: 'lastname', name: 'lastname'},
+                    { data: 'email', name: 'email'},
+                    { data: 'mobile', name: 'mobile' },
+                    { data: 'website', name: 'website' },
+                    { data: 'address', name: 'address' },
+                    { data: 'city', name: 'city' },
+                    { data: 'state', name: 'state' },
+                    { data: 'post_code', name: 'post_code' },
+                ]
+            });
 
 
             //Action Delete function

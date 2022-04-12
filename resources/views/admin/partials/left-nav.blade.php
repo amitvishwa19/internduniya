@@ -55,6 +55,12 @@
             </li>
 
             <li>
+                <a href="{{route('resume.index')}}">
+                    <i data-feather="zap" class="align-self-center menu-icon"></i><span>Students</span>
+                </a>
+            </li>
+
+            <li>
                 <a href="{{route('internship.index')}}">
                     <i data-feather="zap" class="align-self-center menu-icon"></i><span>Internships</span>
                 </a>

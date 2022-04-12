@@ -46,6 +46,7 @@ class UserController extends Controller
             ->addColumn('type',function(User $user){
                 return '<span class="badge badge-soft-primary mr-2"><small>'.$user->type.'</small></span>';
             })
+            
             ->addColumn('status',function(User $user){
                 if($user->status == true){
                     return '<span class="badge badge-soft-success"><small>Active</small></span>';

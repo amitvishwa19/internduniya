@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RouteController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\PolicyController;
+use App\Http\Controllers\Admin\ResumeController;
 use App\Http\Controllers\Admin\ServerController;
 use App\Http\Controllers\Admin\ChapterController;
 use App\Http\Controllers\Admin\ContactController;
@@ -35,8 +36,8 @@ use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ErrorLogController;
 use App\Http\Controllers\Admin\QuestionController;
-use App\Http\Controllers\Admin\ClassroomController;
 
+use App\Http\Controllers\Admin\ClassroomController;
 use App\Http\Controllers\Admin\CorporateController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IntenshipController;
@@ -258,6 +259,8 @@ Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function(){
 
      //Tasks
      Route::resource('/task',TaskController::class);
+
+     Route::resource('/resume',ResumeController::class);
 
    
 
