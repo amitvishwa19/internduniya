@@ -7679,3 +7679,37 @@ ul.steppedprogress li:first-child:after {
     font-size: 10px;
 }
 /*# sourceMappingURL=app.min.css.map */
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.8em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: .8125rem;
+    font-weight: 500;
+    line-height: 1.8;
+    color: #303e67;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #5d728c8a;
+    border-radius: 2px;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+
+small, .small {
+    font-size: 86%;
+    font-weight: 500;
+}
+
+.nest-item-action{
+    margin-top: -37px !important;
+    position: fixed;
+    right: 15px;
+    a{
+        font-weight: 500;
+    }
+}
+
+.dd-handle{
+    font-weight: 500 !important;
+}

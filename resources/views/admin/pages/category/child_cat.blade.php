@@ -5,10 +5,10 @@
             <div class="dd-handle">
                 <span>{{ $category->name }}
             </div>
-            <div class="pull-right item_actions">
-                <a href="{{ route('category.edit' , $category->id)}}" class="btn btn-default btn-xs del-button dt-action-btn mp-0">Edit</a>
-                <a href="javascript:void(0);" class="btn btn-default btn-xs del-button dt-action-btn btn-menu-item delete" id="{{$category->id}}">Delete</a>
-            </div>
+            <div class="pull-right nest-item-action">
+                    <a href="{{ route('category.edit' , $category->id)}}" class="btn btn-default btn-xs del-button dt-action-btn mp-0">Edit</a>
+                    <a href="javascript:void(0);" class="btn btn-default btn-xs del-button dt-action-btn btn-menu-item delete" id="{{$category->id}}">Delete</a>
+                </div>
 
 
             @if(!$category->child->isEmpty())
