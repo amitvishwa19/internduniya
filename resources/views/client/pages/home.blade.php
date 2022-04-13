@@ -231,7 +231,7 @@
 											<div class="blog-thumb">
 												<a href="{{route('app.blog.detail',$blog->slug)}}" title=""><img src="{{$blog->feature_image}}" alt="" /></a>
 												<div class="blog-metas">
-													<a href="{{route('app.blog.detail',$blog->slug)}}" title="">{{\Carbon\Carbon::parse($blog->created_at)->isoFormat('MMM Do YYYY')}}</a>
+													<a href="{{route('app.blog.detail',$blog->slug)}}" title="">{{\Carbon\Carbon::parse($blog->created_at)->isoFormat('D MMM YYYY')}}</a>
 													
 												</div>
 											</div>
