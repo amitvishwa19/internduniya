@@ -7701,14 +7701,7 @@ small, .small {
     font-weight: 500;
 }
 
-.nest-item-action{
-    margin-top: -37px !important;
-    position: fixed;
-    right: 15px;
-    a{
-        font-weight: 500;
-    }
-}
+
 
 .dd-handle{
     font-weight: 500 !important;
