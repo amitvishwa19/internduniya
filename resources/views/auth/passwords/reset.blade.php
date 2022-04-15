@@ -14,7 +14,7 @@
 
                 <div class="login-content">
                     <div class="brand-logo">
-                        <a href="{{route('home')}}">
+                        <a href="{{route('app.home')}}">
                             <img src="{{asset('public/admin/assets/1598601943DZ-Logo Orange-black.png')}}" alt="" style="width: 150px;">
                          </a>
                     </div>
