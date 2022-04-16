@@ -15,7 +15,7 @@
                 <div class="login-content">
                     <div class="brand-logo">
                         <a href="{{route('app.home')}}">
-                            <img src="{{asset('public/admin/assets/1598601943DZ-Logo Orange-black.png')}}" alt="" style="width: 150px;">
+                            <img src="{{setting('app_icon')}}" alt="" style="width: 150px;">
                          </a>
                     </div>
 
@@ -25,14 +25,14 @@
                             <h5 class="info-title">Reset your password</h5>
 
                             @if(Session::has('inactive'))
-                              <!-- <p class="alert alert-info">{{ Session::get('message') }}</p> -->
+                              <p class="alert alert-info">{{ Session::get('message') }}</p>
                               <div class="alert alert-info" role="alert">
                                 Your account is not activated ! Please activate your account. <a href="">Click here</a> to resend activation link
                               </div>
                             @endif
 
                             @if(Session::has('message'))
-                              <!-- <p class="alert alert-info">{{ Session::get('message') }}</p> -->
+                              <p class="alert alert-info">{{ Session::get('message') }}</p>
                               <div class="alert alert-info" role="alert">
                                 {{ Session::get('message') }}
                               </div>

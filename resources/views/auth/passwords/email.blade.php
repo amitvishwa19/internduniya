@@ -5,17 +5,17 @@
 @section('content')
     <div class="login-page">
         <div class="row">
-            <div class="col-9 left-area">
+            <div class="xs-hidden col-9 d-none d-sm-block d-sm-none left-area">
                 <img src="https://miro.medium.com/max/2625/1*qAX1633WKgkCBjW-7BICCA.jpeg" alt="">
 
             </div>
 
-            <div class="col-3 right-area">
+            <div class="col-lg-3 col-sm-12  right-area">
 
                 <div class="login-content">
                     <div class="brand-logo">
                         <a href="{{route('app.home')}}">
-                            <img src="{{asset('public/admin/assets/1598601943DZ-Logo Orange-black.png')}}" alt="" style="width: 150px;">
+                            <img src="{{setting('app_icon')}}" alt="" style="width: 150px;">
                          </a>
                     </div>
 
