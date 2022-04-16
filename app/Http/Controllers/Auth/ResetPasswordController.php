@@ -42,7 +42,7 @@ class ResetPasswordController extends Controller
         
 
         $user = User::where('email',$request->email)->first();
-        $user->password = Hash::make($request->new_password);;
+        $user->password = Hash::make($request->password);
         $user->save();
 
         return redirect()->route('login')->with(session()->flash('message','Password changed successfully'));

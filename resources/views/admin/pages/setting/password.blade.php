@@ -8,6 +8,10 @@
                 <h4 class="card-title">Password Management</h4>
             </div><!--end card-header-->
             <div class="card-body"> 
+
+            <form action="{{route('setting.store',['type'=>'global'])}}" method="post" enctype="multipart/form-data">
+                @csrf
+
                 <div class="form-group">
                     <label class=""><b>Current Password</b></label>
                     <div class="">
@@ -43,6 +47,9 @@
                         <span class="form-text text-muted font-12">Never share your password.</span>
                     </div>
                 </div>
+
+                    <button type="submit" class="btn btn-info waves-effect waves-light btn-sm">Change Password</button>
+            </form>
         
             </div>
         </div>
