@@ -63,7 +63,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <span class="pf-title">Current University</span>
+                            <span class="pf-title">Current/Latest University</span>
                             <div class="pf-field">
                                 <input type="text" name="website" value="{{ !$resume == null ? $resume->website : ""}}">
                             </div>
