@@ -47,7 +47,7 @@
                                         <th>Lastname</th>
                                         <th>Email</th>
                                         <th>Contact</th>
-                                        <th>Website</th>
+                                        <th>University</th>
                                         <th>Address</th>
                                         <th>City</th>
                                         <th>State</th>

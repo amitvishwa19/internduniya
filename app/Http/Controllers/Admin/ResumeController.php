@@ -20,7 +20,7 @@ class ResumeController extends Controller
 
 
         if ($request->ajax()) {
-            $resumes = Resume::orderby('created_at','desc')->latest('id');
+            $resumes = Resume::orderby('created_at','desc')->where('email','<>',null)->latest('id');
 
             return Datatables::of($resumes)
             ->editColumn('created_at',function(Resume $resume){
