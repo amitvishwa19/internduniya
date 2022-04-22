@@ -45,7 +45,7 @@ class StudentController extends Controller
             'mobile' => 'required',
             'city' => 'required',
             'state' => 'required',
-            'address' => 'required',
+            'website' => 'required',
         ],[
             'firstname.required' => ' First name of user is required',
             'lastname.required' => 'Last name of user is required',
@@ -53,7 +53,7 @@ class StudentController extends Controller
             'mobile.required' => 'Please specify mobile',
             'city.required' => 'Please specify city',
             'state.required' => 'Please specify state',
-            'address.required' => 'Please specify address',
+            'website.required' => 'Please specify Current University',
         ]);
 
         $resume = Resume::updateOrCreate([
