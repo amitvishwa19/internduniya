@@ -34,7 +34,7 @@
 							<ul>
 								<li><a href="{{route('student.home')}}" title=""><i class="la la-tachometer"></i>Dashboard</a></li>
 								<li><a href="{{route('student.profile')}}" title=""><i class="la la-file-text"></i>My Profile</a></li>
-								<li><a href="{{route('student.resume')}}" title=""><i class="la la-briefcase"></i>My Resume</a></li>
+								<li><a href="{{route('student.resume')}}" title=""><i class="la la-briefcase"></i>Digital Resume</a></li>
 								<li><a href="{{route('student.internships.shortlisted')}}" title=""><i class="la la-money"></i>Shorlisted Internships</a></li>
 								<li><a href="{{route('student.internships.applied')}}" title=""><i class="la la-paper-plane"></i>Applied Interships</a></li>
 								<li><a href="{{route('student.subscription')}}" title=""><i class="la la-file-text"></i>Subscriptions</a></li>

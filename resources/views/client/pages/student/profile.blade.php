@@ -40,52 +40,52 @@
                         <div class="col-lg-3">
                             <span class="pf-title">First Name*</span>
                             <div class="pf-field">
-                                <input type="text" name="firstname" value="{{ !$resume == null ? $resume->firstname : ''}}{{old('firstname')}}">
+                                <input type="text" name="firstname" value="{{ !$resume == null ? $resume->firstname : old('firstname')}}">
                             </div>
                         </div>
                         
                         <div class="col-lg-3">
                             <span class="pf-title">Last Name*</span>
                             <div class="pf-field">
-                                <input type="text" name="lastname" value="{{ !$resume == null ? $resume->lastname : ''}}{{old('lastname')}}">
+                                <input type="text" name="lastname" value="{{ !$resume == null ? $resume->lastname : old('lastname')}}">
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <span class="pf-title">Email*</span>
                             <div class="pf-field">
-                                <input type="text" name="email" value="{{ !$resume == null ? $resume->email : ''}}{{old('email')}}">
+                                <input type="text" name="email" value="{{ !$resume == null ? $resume->email : old('email')}}">
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <span class="pf-title">Mobile*</span>
                             <div class="pf-field">
-                                <input type="text" name="mobile" value="{{ !$resume == null ? $resume->mobile : ''}}{{old('mobile')}}">
+                                <input type="text" name="mobile" value="{{ !$resume == null ? $resume->mobile : old('mobile')}}">
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <span class="pf-title">Current/Latest University*</span>
                             <div class="pf-field">
-                                <input type="text" name="website" value="{{ !$resume == null ? $resume->website : ''}}{{old('website')}}">
+                                <input type="text" name="website" value="{{ !$resume == null ? $resume->website : old('website')}}">
                             </div>
                         </div>
 
                         <div class="col-lg-3">
                             <span class="pf-title">Postal Code*</span>
                             <div class="pf-field">
-                                <input type="text" id="pincode" name="post_code" value="{{ !$resume == null ? $resume->post_code : ''}}{{old('post_code')}}">
+                                <input type="text" id="pincode" name="post_code" value="{{ !$resume == null ? $resume->post_code : old('post_code')}}">
                             </div>
                         </div>
 
                         <div class="col-lg-3">
                             <span class="pf-title">City*</span>
                             <div class="pf-field">
-                                <input type="text" id="city" name="city" value="{{ !$resume == null ? $resume->city : ''}}{{old('city')}}">
+                                <input type="text" id="city" name="city" value="{{ !$resume == null ? $resume->city : old('city')}}">
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <span class="pf-title">State*</span>
                             <div class="pf-field">
-                                <input type="text" id="state" name="state" value="{{ !$resume == null ? $resume->state : ''}}{{old('state')}}">
+                                <input type="text" id="state" name="state" value="{{ !$resume == null ? $resume->state : old('state')}}">
                             </div>
                         </div>
                         
@@ -94,6 +94,20 @@
                             <span class="pf-title">Address</span>
                             <div class="pf-field">
                                 <textarea name="address" rows="5">{{ !$resume == null ? $resume->address : ''}}{{old('address')}}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <span class="pf-title">Upload Resume (Upload new resume to replace old resume)</span>
+
+                            <div class="mb-2">
+                                @if($resume->resume_url)
+                                    <a href="{{$resume->resume_url}}"><i class="la la-file-text" style="font-size: 30px;"></i></a>
+                                @endif
+                            </div>
+                            
+                            <div class="pf-field">
+                                <input type="file" name="resume">
                             </div>
                         </div>
 

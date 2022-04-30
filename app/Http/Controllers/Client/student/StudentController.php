@@ -38,6 +38,8 @@ class StudentController extends Controller
 
     public function profile_update(Request $request){
 
+
+        
         $this->validate($request,[
             'firstname' => 'required|max:255',
             'lastname' => 'required|max:255',
@@ -46,6 +48,8 @@ class StudentController extends Controller
             'city' => 'required',
             'state' => 'required',
             'website' => 'required',
+            //'resume' => 'required|max:5000|mimes:doc,docx,pdf' //a required, max 10000kb, doc or docx file
+            'resume' => 'max:5000|mimes:doc,docx,pdf' //a required, max 10000kb, doc or docx file
         ],[
             'firstname.required' => ' First name of user is required',
             'lastname.required' => 'Last name of user is required',
@@ -54,7 +58,9 @@ class StudentController extends Controller
             'city.required' => 'Please specify city',
             'state.required' => 'Please specify state',
             'website.required' => 'Please specify Current University',
+            'resume.required' => 'Please upload your latest resume' //a required, max 10000kb, doc or docx file
         ]);
+
 
         $resume = Resume::updateOrCreate([
             'user_id'   => auth()->user()->id,
@@ -68,7 +74,14 @@ class StudentController extends Controller
             'state'     => $request->state,
             'post_code'     => $request->post_code,
             'address'     => $request->address,
+
         ]); 
+
+        if($request->file('resume')){
+            $resumeurl = $resume = Resume::findOrFail($resume->id);
+            $resumeurl->resume_url = uploadImage($request->file('resume'));
+            $resumeurl->save();
+        }
 
         $user = User::findOrFail(auth()->user()->id);
         $user->firstName = $request->firstname;
@@ -76,7 +89,7 @@ class StudentController extends Controller
         $user->resume_id = $resume->id;
         $user->profile = true;
         $user->save();
-
+        //if($file = $request->file('feature_image')){ $post->feature_image = uploadImage($request->file('feature_image'));}
         //dd($request->all());
 
         return redirect()->route('student.profile')

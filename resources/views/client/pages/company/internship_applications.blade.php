@@ -25,10 +25,14 @@
                 <p><i class="la la-map-marker"></i>{{$applicant->resume->city}} / {{$applicant->resume->state}}</p>
                 <p></i>Email: {{$applicant->resume->email}}  <span class="ml-4">Contact: {{$applicant->resume->mobile}}</span></p>
             </div>
-            
-            <div class="del-resume">
-                <a href="#" title=""><i class="la la-trash-o"></i></a>
+
+            <div class="">
+                <a href="{{$applicant->resume->resume_url}}" title=""><i class="la la-file-text" style="font-size: 30px;"></i></a>
             </div>
+            
+            <!-- <div class="del-resume">
+                <a href="#" title=""><i class="la la-trash-o"></i></a>
+            </div> -->
         </div><!-- Emply List -->
     
     @endforeach

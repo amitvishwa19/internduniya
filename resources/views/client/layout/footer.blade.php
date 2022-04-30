@@ -55,7 +55,7 @@
 			</div>
 		</div>
 		<div class="bottom-line">
-			<span>© 2022 Internduniya All rights reserved. Design & Devloped by Devlomatix Solutions</span>
+			<span>© 2022 <b>Internduniya</b> All rights reserved</span>
 			<a href="#scrollup" class="scrollup" title=""><i class="la la-arrow-up"></i></a>
 		</div>
 	</footer>
