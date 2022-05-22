@@ -129,6 +129,9 @@
 										<h3 class="ml-5"><a href="{{route('app.internship.detail',['id'=>$internship->id])}}" title="">{{$internship->title}}</a></h3>
 										<span>{{$internship->corporate->title}}</span>
 									</div>
+									
+									<span class="job-lctn mr-5">{{$internship->applied_users->count()}} Application(s)</span>
+
 									<span class="job-lctn"><i class="la la-map-marker"></i>{{ucFirst($internship->city)}}, {{ucFirst($internship->state)}}</span>
 									<!-- <span class="fav-job"><a href="{{route('app.student.favourite.internship',$internship->id)}}"><i class="la la-heart-o"></i></a></span> -->
 									<span class="job-is ft ml-5">{{strtoupper($internship->type)}}</span>

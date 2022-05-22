@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Models\AppliedInternship;
 use App\Models\FavouriteInternship;
 use App\Http\Controllers\Controller;
+use App\Models\Intenship;
 use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
@@ -468,6 +469,8 @@ class StudentController extends Controller
                    $user->subscribed = false; 
                 }
                 $user->save();
+
+                $this->notifyCorporate($id);
             }
 
             return redirect()->back()
@@ -485,6 +488,26 @@ class StudentController extends Controller
         }
 
         
+    }
+
+    public function notifyCorporate($id){
+
+        $internship = Intenship::findOrFail($id);
+        $corporate= $internship->corporate;
+
+        //dd($corporate);
+
+        $to = $corporate->email;
+        $subject = 'New application for internship : ' . $internship->title;
+        $body = 'test body';
+        $data = [
+            'corporate'=>$corporate,
+            'internship' => $internship,
+            'resume' => auth()->user()->resume,
+        ];
+        $view = 'mails.corporateNotifier';
+
+        return appmail($to,$subject,$body,$data,$view,true);
     }
 
 
