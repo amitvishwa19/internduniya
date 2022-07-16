@@ -132,9 +132,9 @@
                         <a href="{{route('app.blogs')}}" title="">News</a>
                     </li>
 
-                    <li class="">
+                    <!-- <li class="">
                         <a href="{{route('app.subscriptions')}}" title="">Pricing</a>
-                    </li>
+                    </li> -->
                 </ul>
             </nav><!-- Menus -->
         </div>

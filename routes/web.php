@@ -121,7 +121,7 @@ Route::group(['middleware'=>['auth','student'],'prefix'=>'student'],function(){
     Route::get('/internship/favorite/add/{id}', [StudentController::class, 'add_favourite_internship'])->name('app.student.favourite.internship');
     Route::get('/internship/favorite/delete/{id}', [StudentController::class, 'delete_favourite_internship'])->name('app.student.favourite.internship.delete');
 
-    Route::get('/internship/apply/add/{id}', [StudentController::class, 'apply_internship'])->name('app.student.apply.internship')->middleware('subscribed');
+    Route::get('/internship/apply/add/{id}', [StudentController::class, 'apply_internship'])->name('app.student.apply.internship');//->middleware('subscribed');
 
 
     Route::get('/internships/shortlisted', [StudentController::class, 'internships_shortlisted'])->name('student.internships.shortlisted');
@@ -132,10 +132,6 @@ Route::group(['middleware'=>['auth','student'],'prefix'=>'student'],function(){
     Route::get('/password_management', [StudentController::class, 'password_management'])->name('student.password.management');
     Route::post('/password_management/update', [StudentController::class, 'password_update'])->name('student.password.update');
 });
-
-
-
-
 
 
 //Corporate
@@ -153,7 +149,7 @@ Route::group(['middleware'=>['auth', 'corporate'],'prefix'=>'corporate'],functio
     
 
 
-    Route::get('/internship/new', [CompanyController::class, 'internship_new'])->name('company.internship.new')->middleware('profile','subscribed');
+    Route::get('/internship/new', [CompanyController::class, 'internship_new'])->name('company.internship.new');//->middleware('profile','subscribed');
     Route::post('/internship/new/add', [CompanyController::class, 'internship_new_add'])->name('company.internship.new.add');
     Route::get('/internship/delete/{id}', [CompanyController::class, 'internship_delete'])->name('company.internship.delete');
 
@@ -168,13 +164,6 @@ Route::group(['middleware'=>['auth', 'corporate'],'prefix'=>'corporate'],functio
     Route::get('/subscription', [CompanyController::class, 'subscription'])->name('company.subscription');
 
 });
-
-
-
-
-
-
-
 
 
 Auth::routes();
